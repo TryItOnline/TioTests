@@ -1,6 +1,6 @@
 # TioTests
 
-An attempt to build a tool that runs test suits on [TryItOnline!](https://tryitonline.net) as well as a default "Hello World!" test for every supported language
+An attempt to build a tool that runs test suits on [TryItOnline!](https://tryitonline.net) as well as a default "Hello World!" test for every supported language. Runs everywhere, where .NET Core runs. Tested on Windows 10 and Fedora 24.
 
 1. Install [.NET Core](https://www.microsoft.com/net/core) you need version 1.1
 2. `git clone https://github.com/AndrewSav/TioTests.git`
