@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "assembly-nasm",
+    "Header": null,
+    "Footer": null,
+    "Code": "section .text\nglobal _start\n_start:\nmov edx,len\nmov ecx,msg\nmov ebx,1\nmov eax,4\nint 0x80\nmov ebx,0\nmov eax,1\nint 0x80\nsection .data\nmsg db \"Hello World!\",0xa\nlen equ $ - msg",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}
