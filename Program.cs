@@ -17,7 +17,9 @@ namespace TioTests
 
             if (Directory.Exists(config.Test))
             {
-                foreach (string file in Directory.GetFiles(config.Test,"*.json"))
+                string[] files = Directory.GetFiles(config.Test,"*.json");
+                Array.Sort(files);
+                foreach (string file in files)
                 {
                     RunTest(file, config);
                 }
