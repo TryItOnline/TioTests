@@ -3,7 +3,7 @@
     "Language": "apl-ngn",
     "Header": null,
     "Footer": null,
-    "Code": "'Hello World!'",
+    "Code": "⎕←'Hello World!'",
     "Input": null,
     "CommandLineArguments": null
   },

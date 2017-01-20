@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Net.Http;
 using Newtonsoft.Json;
 
@@ -38,14 +39,14 @@ namespace TioTests
         {
             var name = file.EndsWith(".json") ? file.Substring(0, file.Length - ".json".Length) : file;
             name = Path.GetFileName(name);
-	    Console.Write($"{name}...");
-            TestDescription test = JsonConvert.DeserializeObject<TestDescription>(File.ReadAllText(file));
+            Console.Write($"{name}...");
+            TestDescription test = JsonConvert.DeserializeObject<TestDescription>(Encoding.UTF8.GetString(File.ReadAllBytes(file)));
             RunResult result = Execute(test.Input, config.RunUrl);
             if (config.TrimResults)
             {
                 result.Output = result.Output.Trim("\n\r\t ".ToCharArray());
             }
-	    Console.Write($"\r{string.Empty.PadLeft(name.Length+3)}\r");
+            Console.Write($"\r{string.Empty.PadLeft(name.Length+3)}\r");
             if (test.Output == result.Output)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
