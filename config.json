@@ -1,5 +1,7 @@
 ﻿{
   "RunUrl": "https://backend.tryitonline.net/run",
   "Test": "HelloWorldTests",
-  "TrimResults": true
+  "TrimWhitespacesFromResults": true,
+  "DisplayDebugInfoOnError": true,
+  "DisplayDebugInfoOnSuccess": false,
 }

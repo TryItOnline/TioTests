@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "bc",
+    "Header": null,
+    "Footer": null,
+    "Code": "print \"Hello World!\";\n",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "dc",
+    "Header": null,
+    "Footer": null,
+    "Code": "[Hello World!]P",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

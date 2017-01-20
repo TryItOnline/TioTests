@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "joy",
+    "Header": null,
+    "Footer": null,
+    "Code": "stdout \"Hello World!\" fputstring pop.\nquit",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

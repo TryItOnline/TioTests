@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "ubasic",
+    "Header": null,
+    "Footer": null,
+    "Code": "10 PRINT \"Hello World!\"",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

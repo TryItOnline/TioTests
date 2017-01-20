@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "java-openjdk",
+    "Header": null,
+    "Footer": null,
+    "Code": "class HelloWorld {public static void main(String[] args) {System.out.println(\"Hello World!\");}}",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

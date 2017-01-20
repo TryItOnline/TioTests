@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "cpp-gcc",
+    "Header": null,
+    "Footer": null,
+    "Code": "#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello World!\"); }",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

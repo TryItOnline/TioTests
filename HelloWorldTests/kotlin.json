@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "kotlin",
+    "Header": null,
+    "Footer": null,
+    "Code": "fun main(args:Array<String>){println(\"Hello World!\")}",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

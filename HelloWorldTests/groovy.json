@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "groovy",
+    "Header": null,
+    "Footer": null,
+    "Code": "print 'Hello World!'",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

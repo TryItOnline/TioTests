@@ -1,0 +1,13 @@
+{
+  "Input": {
+    "Language": "sed",
+    "Header": null,
+    "Footer": null,
+    "Code": "s/.*/Hello World!/",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}
+
+

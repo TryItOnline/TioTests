@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "go",
+    "Header": null,
+    "Footer": null,
+    "Code": "package main\nimport \"fmt\"\nfunc main() {fmt.Printf(\"Hello World!\")}",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

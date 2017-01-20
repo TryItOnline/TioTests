@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "pari-gp",
+    "Header": null,
+    "Footer": null,
+    "Code": "print1(\"Hello World!\")",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

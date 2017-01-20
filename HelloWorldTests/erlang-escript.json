@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "erlang-escript",
+    "Header": null,
+    "Footer": null,
+    "Code": "\nmain([])->\nio:fwrite(\"Hello World!\").",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

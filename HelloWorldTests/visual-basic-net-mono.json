@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "visual-basic-net-mono",
+    "Header": null,
+    "Footer": null,
+    "Code": "Module Hello\nSub Main()\nConsole.WriteLine(\"Hello World!\")\nEnd Sub\nEnd Module",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

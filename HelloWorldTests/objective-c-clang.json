@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "objective-c-clang",
+    "Header": null,
+    "Footer": null,
+    "Code": "int main(){printf(\"Hello World!\");}",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

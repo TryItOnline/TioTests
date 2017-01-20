@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "racket",
+    "Header": null,
+    "Footer": null,
+    "Code": "#lang racket/base\n(display \"Hello World!\")",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}

@@ -1,0 +1,13 @@
+{
+  "Input": {
+    "Language": "rust",
+    "Header": null,
+    "Footer": null,
+    "Code": "fn main(){println!(\"Hello World!\");}",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello World!"
+}
+
+

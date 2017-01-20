@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -41,38 +42,57 @@ namespace TioTests
             name = Path.GetFileName(name);
             Console.Write($"{name}...");
             TestDescription test = JsonConvert.DeserializeObject<TestDescription>(Encoding.UTF8.GetString(File.ReadAllBytes(file)));
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
             RunResult result = Execute(test.Input, config.RunUrl);
-            if (config.TrimResults)
+            sw.Stop();
+            string time = TimeFormatter.LargestIntervalWithUnits(sw.Elapsed);
+            
+            if (config.TrimWhitespacesFromResults)
             {
-                result.Output = result.Output.Trim("\n\r\t ".ToCharArray());
+                result.Output = result.Output?.Trim("\n\r\t ".ToCharArray());
             }
             Console.Write($"\r{string.Empty.PadLeft(name.Length+3)}\r");
             if (test.Output == result.Output)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"{name} - PASS");
+                Console.WriteLine($"{name} - PASS ({time})");
                 Console.ResetColor();
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"{name} - FAIL");
-                Console.ResetColor();
-                Console.WriteLine($"Expected: {test.Output}");
-                Console.WriteLine($"Got: {result.Output}");
-                if (result.Warnings != null)
+                if (config.DisplayDebugInfoOnSuccess)
                 {
-                    foreach (string warning in result.Warnings)
+                    if (result.Warnings != null)
                     {
-                        if (!string.IsNullOrWhiteSpace(warning))
+                        foreach (string warning in result.Warnings)
                         {
                             Console.WriteLine($"Warning: {warning}");
                         }
                     }
+                    if (!string.IsNullOrWhiteSpace(result.Debug))
+                    {
+                        Console.WriteLine($"Debug {result.Debug}");
+                    }
                 }
-                if (!string.IsNullOrWhiteSpace(result.Debug))
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"{name} - FAIL ({time})");
+                Console.ResetColor();
+                if (config.DisplayDebugInfoOnError)
                 {
-                    Console.WriteLine($"Debug {result.Debug}");
+                    Console.WriteLine($"Expected: {test.Output}");
+                    Console.WriteLine($"Got: {result.Output}");
+                    if (result.Warnings != null)
+                    {
+                        foreach (string warning in result.Warnings)
+                        {
+                            Console.WriteLine($"Warning: {warning}");
+                        }
+                    }
+                    if (!string.IsNullOrWhiteSpace(result.Debug))
+                    {
+                        Console.WriteLine($"Debug {result.Debug}");
+                    }
                 }
             }
         }
@@ -102,7 +122,7 @@ namespace TioTests
             }
             return new RunResult
             {
-                Warnings = tokens[2]?.Split('\n')?.ToList(),
+                Warnings = tokens[2]?.Split('\n').Where(x=>!string.IsNullOrWhiteSpace(x)).ToList(),
                 Output = tokens[0],
                 Debug = tokens[1]
             };
