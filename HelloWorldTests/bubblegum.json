@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "bubblegum",
+    "Header": null,
+    "Footer": null,
+    "Code": "0:15274d5062a99a296b6de2",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

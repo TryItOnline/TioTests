@@ -3,9 +3,9 @@
     "Language": "d",
     "Header": null,
     "Footer": null,
-    "Code": "import std.stdio; void main(){writeln(\"Hello World!\");}",
+    "Code": "import std.stdio; void main(){writeln(\"Hello, World!\");}",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

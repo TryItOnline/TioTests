@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "fission2",
+    "Header": null,
+    "Footer": null,
+    "Code": "R\"Hello, World!\";",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

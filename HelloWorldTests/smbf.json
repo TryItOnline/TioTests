@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "smbf",
+    "Header": null,
+    "Footer": null,
+    "Code": "<[.<]\u0000!dlroW ,olleH",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

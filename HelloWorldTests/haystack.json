@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "haystack",
+    "Header": null,
+    "Footer": null,
+    "Code": "\"Hello, World!\"o|",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

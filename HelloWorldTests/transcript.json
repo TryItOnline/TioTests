@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "transcript",
+    "Header": null,
+    "Footer": null,
+    "Code": "He is here.\n>HE, Hello, World!\n>X HE",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

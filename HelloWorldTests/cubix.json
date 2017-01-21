@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "cubix",
+    "Header": null,
+    "Footer": null,
+    "Code": "./v.o;@?/\"!dlroW\"S',u/\"Hello\"",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

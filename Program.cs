@@ -19,8 +19,10 @@ namespace TioTests
             {
                 string[] files = Directory.GetFiles(config.Test,"*.json");
                 Array.Sort(files);
+                int counter = 0;
                 foreach (string file in files)
                 {
+                    Console.Write($"[{++counter}/{files.Length}] ");
                     RunTest(file, config);
                 }
             }

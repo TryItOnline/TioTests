@@ -1,0 +1,12 @@
+{
+  "Input": {
+    "Language": "hexagony",
+    "Header": null,
+    "Footer": null,
+    "Code": "H;e;P1;@/;W;o;/l;;o;Q/r;l;d;2;P0",
+    "Input": null,
+    "Format": "ASCII",
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

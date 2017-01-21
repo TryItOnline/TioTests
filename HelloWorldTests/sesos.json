@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "sesos",
+    "Header": null,
+    "Footer": null,
+    "Code": "add 72\nput\nfwd 1\nadd 101\nput\nadd 7\nput\nput\nadd 3\nput\nfwd 1\nadd 44\nput\nsub 12\nput\nrwd 2\nadd 15\nput\nfwd 1\nput\nadd 3\nput\nsub 6\nput\nsub 8\nput\nfwd 1\nadd 1\nput",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

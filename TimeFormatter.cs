@@ -11,42 +11,33 @@ namespace TioTests
 
         public static string LargestIntervalWithUnits(TimeSpan interval)
         {
-            if (interval < TimeSpan.Zero)
-            {
-                throw new ArgumentOutOfRangeException("interval",
-                                                    "Negative Timespans are not supported.");
-            }
-
             if (interval > MinimumIntervalDeemedOneDay)
             {
-                return FormatTime(interval.TotalDays, "day");
+                return FormatTime(interval.TotalDays, "d");
             }
 
             if (interval > MinimumIntervalDeemedOneHour)
             {
-                return FormatTime(interval.TotalHours, "hour");
+                return FormatTime(interval.TotalHours, "hr");
             }
 
             if (interval > MinimumIntervalDeemedOneMinute)
             {
-                return FormatTime(interval.TotalMinutes, "minute");
+                return FormatTime(interval.TotalMinutes, "min");
             }
 
             if (interval > MinimumIntervalDeemedOneSecond)
             {
-                return FormatTime(interval.TotalSeconds, "second");
+                return FormatTime(interval.TotalSeconds, "sec");
             }
 
-            return "now";
+            return FormatTime(interval.TotalMilliseconds, "ms");
         }
 
         private static string FormatTime(double value, string units)
         {
             var ceiling = (int)Math.Ceiling(value);
-            return string.Format("{0:#,##0} {1}{2}",
-                                ceiling,
-                                units,
-                                (ceiling == 1 ? string.Empty : "s"));
+            return string.Format($"{ceiling:#,##0} {units}");
         }
     }
 }

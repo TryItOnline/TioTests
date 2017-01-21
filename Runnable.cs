@@ -43,7 +43,7 @@ namespace TioTests
                 ms.Write(BitConverter.GetBytes(CommandLineArguments.Count).Reverse().ToArray());
                 foreach(string arg in CommandLineArguments)
                 {
-                    ms.Write(Encoding.UTF8.GetBytes(Input).Where(x => x!=0).ToArray());
+                    ms.Write(Encoding.UTF8.GetBytes(arg).Where(x => x!=0).ToArray());
                     ms.WriteByte(0);
                 }
                 byte[] toCompress = ms.ToArray();

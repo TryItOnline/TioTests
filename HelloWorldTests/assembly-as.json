@@ -3,9 +3,9 @@
     "Language": "assembly-as",
     "Header": null,
     "Footer": null,
-    "Code": ".text\n  .global _start\n_start:\nmovl $len,%edx\nmovl $msg,%ecx\nmovl $1,%ebx\nmovl $4,%eax\nint $0x80\nmovl $0,%ebx\nmovl $1,%eax\nint $0x80\n.data\nmsg:\n.ascii \"Hello World!\n\"\nlen = . - msg\n",
+    "Code": ".text\n  .global _start\n_start:\nmovl $len,%edx\nmovl $msg,%ecx\nmovl $1,%ebx\nmovl $4,%eax\nint $0x80\nmovl $0,%ebx\nmovl $1,%eax\nint $0x80\n.data\nmsg:\n.ascii \"Hello, World!\n\"\nlen = . - msg\n",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "v",
+    "Header": null,
+    "Footer": null,
+    "Code": "iHello, World!",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

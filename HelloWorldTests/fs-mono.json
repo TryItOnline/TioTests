@@ -3,9 +3,9 @@
     "Language": "fs-mono",
     "Header": null,
     "Footer": null,
-    "Code": "printfn \"Hello World!\"",
+    "Code": "printfn \"Hello, World!\"",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

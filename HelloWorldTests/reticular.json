@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "reticular",
+    "Header": null,
+    "Footer": null,
+    "Code": "\"Hello, World!\"p;",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

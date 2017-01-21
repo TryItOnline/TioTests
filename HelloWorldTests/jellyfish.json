@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "jellyfish",
+    "Header": null,
+    "Footer": null,
+    "Code": "P\"Hello, World!\"",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

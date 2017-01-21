@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "detour",
+    "Header": null,
+    "Footer": null,
+    "Code": "`u\n@\"Hello, World!\"",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

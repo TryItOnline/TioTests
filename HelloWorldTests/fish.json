@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "fish",
+    "Header": null,
+    "Footer": null,
+    "Code": "!v\"Hello, World!\"r!\n >l?!;o",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

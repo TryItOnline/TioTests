@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "befunge-98",
+    "Header": null,
+    "Footer": null,
+    "Code": "\"9!dlroW ,olleH\"ck,@",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

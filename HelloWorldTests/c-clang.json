@@ -3,9 +3,9 @@
     "Language": "c-clang",
     "Header": null,
     "Footer": null,
-    "Code": "#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello World!\"); }",
+    "Code": "#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello, World!\"); }",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

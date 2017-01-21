@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "gs2",
+    "Header": null,
+    "Footer": null,
+    "Code": "↕h",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

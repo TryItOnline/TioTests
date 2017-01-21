@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "stackcats",
+    "Header": null,
+    "Footer": null,
+    "Code": "-*(:^-_-_:-_:-_:-_:-_-_:[:^]]:^!-*!->[!_>[!_>[{]>[^-_-_:]]<<<}>[!-:^[[\\\\>]:^[[>:[>:^[<<]]\\\\>[*>+:^:-_]:^[[-_*[>>>[-_[/<]>+^[>[<<]]*>[)",
+    "Input": null,
+    "CommandLineArguments": ["-l"]
+  },
+  "Output": "Hello, World!"
+}

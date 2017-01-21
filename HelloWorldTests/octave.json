@@ -3,9 +3,9 @@
     "Language": "octave",
     "Header": null,
     "Footer": null,
-    "Code": "printf(\"Hello World!\");",
+    "Code": "printf(\"Hello, World!\");",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

@@ -3,9 +3,9 @@
     "Language": "clisp",
     "Header": null,
     "Footer": null,
-    "Code": "(format t \"Hello World!\")",
+    "Code": "(format t \"Hello, World!\")",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

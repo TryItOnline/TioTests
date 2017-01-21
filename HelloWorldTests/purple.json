@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "purple",
+    "Header": null,
+    "Footer": null,
+    "Code": "AA1AA1AA1bA1b1Bo1bb1bbibb1Bi1b     \n ! d l r o W   , o l l e H",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

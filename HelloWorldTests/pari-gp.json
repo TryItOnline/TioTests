@@ -3,9 +3,9 @@
     "Language": "pari-gp",
     "Header": null,
     "Footer": null,
-    "Code": "print1(\"Hello World!\")",
+    "Code": "print1(\"Hello, World!\")",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

@@ -3,11 +3,11 @@
     "Language": "rust",
     "Header": null,
     "Footer": null,
-    "Code": "fn main(){println!(\"Hello World!\");}",
+    "Code": "fn main(){println!(\"Hello, World!\");}",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }
 
 

@@ -3,9 +3,9 @@
     "Language": "cs-mono",
     "Header": null,
     "Footer": null,
-    "Code": "class a{static void Main(){System.Console.Write(\"Hello World!\");}}",
+    "Code": "class a{static void Main(){System.Console.Write(\"Hello, World!\");}}",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

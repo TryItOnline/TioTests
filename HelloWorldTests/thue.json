@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "thue",
+    "Header": null,
+    "Footer": null,
+    "Code": "a::=~Hello, World!\n::=\na\n",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

@@ -3,9 +3,9 @@
     "Language": "clojure",
     "Header": null,
     "Footer": null,
-    "Code": "(println \"Hello World!\")",
+    "Code": "(println \"Hello, World!\")",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

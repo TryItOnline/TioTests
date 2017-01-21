@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "golfscript",
+    "Header": null,
+    "Footer": null,
+    "Code": "\"Hello, World!\"",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

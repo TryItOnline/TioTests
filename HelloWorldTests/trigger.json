@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "trigger",
+    "Header": null,
+    "Footer": null,
+    "Code": "HHHeeelll#lllooo,,,   WWWooorrrlllddd!!!",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

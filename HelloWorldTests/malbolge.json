@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "malbolge",
+    "Header": null,
+    "Footer": null,
+    "Code": "('&%:9]!~}|z2Vxwv-,POqponl$Hjihf|B@@>,=<M:9&7Y#VV2TSn.Oe*c;(I&%$#\"mCBA?zxxv*Pb8`qo42mZF.{Iy*@dD'<;_?!\\}}|z2VxSSQ",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

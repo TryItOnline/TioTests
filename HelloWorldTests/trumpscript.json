@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "trumpscript",
+    "Header": null,
+    "Footer": null,
+    "Code": "say \" Hello, World!\"\nAmerica is great.",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "hello, world!"
+}

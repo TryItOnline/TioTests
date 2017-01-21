@@ -3,11 +3,11 @@
     "Language": "scheme-chicken",
     "Header": null,
     "Footer": null,
-    "Code": "(display \"Hello World!\")",
+    "Code": "(display \"Hello, World!\")",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }
 
 

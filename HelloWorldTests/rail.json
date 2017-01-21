@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "rail",
+    "Header": null,
+    "Footer": null,
+    "Code": "$'main'\n -[Hello, World!]o#",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

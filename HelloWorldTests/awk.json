@@ -3,9 +3,9 @@
     "Language": "awk",
     "Header": null,
     "Footer": null,
-    "Code": "BEGIN{print \"Hello World!\"}",
+    "Code": "BEGIN{print \"Hello, World!\"}",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

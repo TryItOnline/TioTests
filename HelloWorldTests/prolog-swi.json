@@ -3,9 +3,9 @@
     "Language": "prolog-swi",
     "Header": null,
     "Footer": null,
-    "Code": "?-write('Hello World!').",
+    "Code": "?-write('Hello, World!').",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

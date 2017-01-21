@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "logicode",
+    "Header": null,
+    "Footer": null,
+    "Code": "var a=11011\nvar l=@(a+00)\nvar o=a+11\nout @1001000+@1100101+l+l+@o+@101100+@100000+@1010111+@o+@1110010+l+@1100100+@100001",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

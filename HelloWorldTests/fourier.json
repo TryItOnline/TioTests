@@ -1,0 +1,12 @@
+{
+  "Input": {
+    "Language": "fourier",
+    "Header": null,
+    "Footer": null,
+    "Code": "72a101a+7aa+3a44a32a87a111a+3a-6a-8a33a",
+    "Input": null,
+    "Format": "ASCII",
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

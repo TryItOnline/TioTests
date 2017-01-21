@@ -3,9 +3,9 @@
     "Language": "c-tcc",
     "Header": null,
     "Footer": null,
-    "Code": "main(){puts(\"Hello World!\");}",
+    "Code": "main(){puts(\"Hello, World!\");}",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "arnoldc",
+    "Header": null,
+    "Footer": null,
+    "Code": "IT'S SHOWTIME\nTALK TO THE HAND \"Hello, World!\"\nYOU HAVE BEEN TERMINATED",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

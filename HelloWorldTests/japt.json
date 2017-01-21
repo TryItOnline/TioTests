@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "japt",
+    "Header": null,
+    "Footer": null,
+    "Code": "`HÁM, World!",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

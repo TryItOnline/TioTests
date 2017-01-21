@@ -3,9 +3,9 @@
     "Language": "haskell",
     "Header": null,
     "Footer": null,
-    "Code": "main=putStr\"Hello World!\"",
+    "Code": "main=putStr\"Hello, World!\"",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

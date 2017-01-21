@@ -3,9 +3,9 @@
     "Language": "ruby",
     "Header": null,
     "Footer": null,
-    "Code": "puts 'Hello World!'",
+    "Code": "puts 'Hello, World!'",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

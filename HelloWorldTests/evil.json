@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "evil",
+    "Header": null,
+    "Footer": null,
+    "Code": "aeeeaeeewueuueweeueeuewwaaaweaaewaeaawueweeeaeeewaaawueeueweeaweeeueuw",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

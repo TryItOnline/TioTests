@@ -3,9 +3,9 @@
     "Language": "05ab1e",
     "Header": null,
     "Footer": null,
-    "Code": "\"Hello World!\"",
+    "Code": "\"Hello, World!\"",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

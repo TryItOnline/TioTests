@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "brainfuck",
+    "Header": null,
+    "Footer": null,
+    "Code": "--<-<<+[+[<+>--->->->-<<<]>]<<--.<++++++.<<-..<<.<+.>>.>>.<<<.+++.>>.>>-.<<<+.",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

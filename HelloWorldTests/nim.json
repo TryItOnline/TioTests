@@ -3,9 +3,9 @@
     "Language": "nim",
     "Header": null,
     "Footer": null,
-    "Code": "echo \"Hello World!\"",
+    "Code": "echo \"Hello, World!\"",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }

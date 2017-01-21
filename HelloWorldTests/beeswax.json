@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "beeswax",
+    "Header": null,
+    "Footer": null,
+    "Code": "_`Hello, World!",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

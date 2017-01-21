@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "vitsy",
+    "Header": null,
+    "Footer": null,
+    "Code": "\"!dlroW ,olleH\"Z",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

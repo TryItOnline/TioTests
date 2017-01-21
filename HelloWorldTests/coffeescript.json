@@ -3,9 +3,9 @@
     "Language": "coffeescript",
     "Header": null,
     "Footer": null,
-    "Code": "console.log(\"Hello World!\")",
+    "Code": "console.log(\"Hello, World!\")",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "Hello World!"
+  "Output": "Hello, World!"
 }
