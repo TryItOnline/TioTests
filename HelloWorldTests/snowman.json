@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "snowman",
+    "Header": null,
+    "Footer": null,
+    "Code": "(\"Hello, World!\"sP",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

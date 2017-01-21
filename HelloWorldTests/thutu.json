@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "thutu",
+    "Header": null,
+    "Footer": null,
+    "Code": "/^=1$/Hello, World!=n=x=9/",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

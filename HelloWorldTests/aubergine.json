@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "aubergine",
+    "Header": null,
+    "Footer": null,
+    "Code": "=aA-a1=oA=bi+b1-Ab-bb:bA+B1=iBGolf by Quintopia\n!dlroW ,olleH",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}
