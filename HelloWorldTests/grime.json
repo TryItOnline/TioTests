@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "grime",
+    "Header": null,
+    "Footer": null,
+    "Code": ".+",
+    "Input": "Hello, World!",
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}
