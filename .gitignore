@@ -32,3 +32,5 @@ msbuild.wrn
 .vs/
 
 .helpers
+/TioTests.xproj
+/TioTests.sln
