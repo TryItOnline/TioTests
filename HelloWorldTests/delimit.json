@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "delimit",
+    "Header": null,
+    "Footer": null,
+    "Code": "=#:#Hello, World!#/##3#=#?#9#\"",
+    "Input": null,
+    "CommandLineArguments": ["#"]
+  },
+  "Output": "Hello, World!"
+}
