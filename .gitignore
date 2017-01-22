@@ -34,3 +34,4 @@ msbuild.wrn
 .helpers
 /TioTests.xproj
 /TioTests.sln
+/Properties/launchSettings.json
