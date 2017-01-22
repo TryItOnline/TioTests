@@ -41,10 +41,10 @@ EOT
 
 cat <<EOT >> /etc/systemd/system/tiotests.timer
 [Unit]
-Description=Run tiotests.service every 30 minutes
+Description=Run tiotests.service
 
 [Timer]
-OnCalendar=*:0/30
+OnCalendar=07:00
 
 [Install]
 WantedBy=timers.target
