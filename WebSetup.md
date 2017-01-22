@@ -3,7 +3,7 @@
  - Install https://github.com/mthenw/frontail
  - Install https://www.microsoft.com/net/core
  - Clone https://github.com/AndrewSav/TioTests.git
- - In the TioTests folder edit cofig.json make sure that "UseConsoleCodes" is false
+ - In the TioTests folder edit config.json make sure that "UseConsoleCodes" is false
  - In the TioTests folder run:
 
 ```
