@@ -27,11 +27,11 @@ namespace TioTests
             {
                 result.Output = result.Output?.Trim("\n\r\t ".ToCharArray());
             }
-            Logger.Log($"\r{string.Empty.PadLeft(name.Length + 3)}\r");
+            Logger.Log($"\r{string.Empty.PadLeft(name.Length + 19)}\r", true);
             if (test.Output == result.Output)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Logger.Log($"{name} - PASS ({time})");
+                Logger.LogLine($"{name} - PASS ({time})");
                 Console.ResetColor();
                 if (config.DisplayDebugInfoOnSuccess)
                 {
