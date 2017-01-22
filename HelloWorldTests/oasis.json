@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "oasis",
+    "Header": null,
+    "Footer": null,
+    "Code": "\"Hello, world!\"",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, world!"
+}

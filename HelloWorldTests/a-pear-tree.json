@@ -1,0 +1,12 @@
+{
+  "Input": {
+    "Language": "a-pear-tree",
+    "Header": null,
+    "Footer": null,
+    "Code": "#r3TQJ\n
+print(\"Hello, World!\")",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "brainbool",
+    "Header": null,
+    "Footer": null,
+    "Code": "--<-<<+[+[<+>--->->->-<<<]>]<<--.<++++++.<<-..<<.<+.>>.>>.<<<.+++.>>.>>-.<<<+.",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "0000010001001"
+}

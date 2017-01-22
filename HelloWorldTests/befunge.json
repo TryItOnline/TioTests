@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "befunge",
+    "Header": null,
+    "Footer": null,
+    "Code": " >25*\"!dlroW ,olleH\":v\n                  v:,_@\n                  >  ^",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

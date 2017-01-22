@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "numberwang",
+    "Header": null,
+    "Footer": null,
+    "Code": "068416902713063416902719936733633069415902719930694169027166358363356358306841590271653",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello world!"
+}

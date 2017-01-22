@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "glypho",
+    "Header": null,
+    "Footer": null,
+    "Code": "aabcabababbaabababbcabababababbcabbcabbb",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "@"
+}

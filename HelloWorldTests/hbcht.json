@@ -1,0 +1,96 @@
+{
+  "Input": {
+    "Language": "hbcht",
+    "Header": null,
+    "Footer": null,
+    "Code": "; Prints \"Hello, world!\n\".
+@outtext
+
+     v                           >v       ^
+> v  <                            v     >>^<
+  v  ^  v                         v     ^
+     ^  <                         v     ^
+        ^                         v     ^
+  >   />^<v                       v     ^
+  ^  >v<  <                       v     ^
+          ^                       v     ^
+  ^   > />^<v                     v     ^   #
+  ^   ^>v<  <                     v     ^   ^
+  ^         ^                     v     ^   ^
+  ^     > />^<v                   v     ^   ^
+  ^     ^>v<  <                   v     ^   ^
+  ^           ^                   v     ^   ^
+  ^       > />^<v                 v     ^   ^
+  ^       ^>v<  <                 v     ^   ^
+  ^             ^                 v     ^   ^
+  ^         > />^<v               v     ^   ^
+  ^         ^>v<  <           >v  v     ^ >>^<
+  ^               ^           ^v  v     ^ ^
+  ^           > />^<v         ^v  v     ^ ^
+  ^           ^>v<  <         ^v  v   >>^<^
+  ^                 ^         ^v  v   ^   ^
+  ^             > />^<v       ^v  v   ^   ^
+  ^             ^>v<  <       ^v  v   ^   ^
+  ^                   ^       ^v  v   ^   ^
+  ^               > />^<v     ^v  v   ^   ^
+  ^               ^>v<  <     ^v  v   ^   ^
+  ^                     ^     ^v  v   ^   ^
+  ^                 > />^<v   ^v  v   ^   ^
+  ^                 ^>v<  <   ^v  v   ^   ^
+  ^                       ^   ^v  v   ^   ^
+  ^                   > />^<v ^v  v   ^   ^
+  ^                   ^>v<  < ^v  v   ^   ^
+  ^                         ^ ^v  v   ^   ^
+  ^                     > />^<^v  v   ^   ^
+  ^                >>   ^     ^ < v   ^   ^
+  ^          >v<<<<<<<<<<<<    v  v   ^   ^
+  ^           v   >^<          v  v >>^<  ^
+  ^           v  > >v          v  v ^     ^
+> ^   v       v  ^^            v  v ^     ^
+^ ^           v  ^^            v  v ^     ^
+^ ^           v  ^^            v  v ^     ^
+^ ^           v  ^^            v  v ^     ^
+^ ^           v  ^^            v  v ^     ^
+^ ^           v  ^^            v  v ^     ^
+^ ^           v  ^^            v  v ^     ^
+^ ^           v  ^^            v  v ^     ^
+^ ^           v  ^^            v  v ^     ^
+^ ^           v  ^^            v  v ^     ^
+^ ^           v  ^^            v  v ^     ^
+^ ^           v  ^^            v  v ^   >>^<
+^ ^           v  ^^ <          v  v ^   ^
+^ ^           v>>^<            v  v ^   ^
+^ ^                            v  v ^   ^
+^ ^           v^               v  v ^   ^
+^ ^           v^               v  v ^   ^
+^ ^           v^               v  v ^     v
+^ ^           v^               v  v ^>v   <
+^ ^           v^               v  v ^ >>^<^
+^ ^        >v <^               v  v ^ ^   ^
+^ ^         >>^^<              v  v ^     ^
+^ ^         ^                  v  v ^     ^
+^ ^                            v  >>^<    ^
+^ ^                            v  ^       ^
+^ ^                            v          ^
+^ ^                            v          ^
+^ ^    v                       v          ^
+^ ^    <                       v          ^
+^     >^<                      v          ^
+^     ^                        v          ^
+^     v                        > ^<       ^
+^     <                        ^
+    >>^<
+ >  ^<v
+ ^ >v<<
+  v
+>v<
+  ^
+ >^<
+ o>v
+ v >  ^<
+ v ^",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, world!"
+}
