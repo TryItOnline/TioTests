@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "brachylog2",
+    "Header": null,
+    "Footer": null,
+    "Code": "\"Hello, World!\"w",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}
