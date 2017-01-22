@@ -11,11 +11,11 @@ namespace TioTests
 {
     public class TestRunner
     {
-        public static void RunTest(string file, Config config)
+        public static void RunTest(string file, Config config, string counter)
         {
             var name = file.EndsWith(".json") ? file.Substring(0, file.Length - ".json".Length) : file;
             name = Path.GetFileName(name);
-            Logger.Log(config.UseConsoleCodes ? $"{name}..." : $"{name} ");
+            if (config.UseConsoleCodes) Logger.Log($"{counter} {name}...");
             TestDescription test = JsonConvert.DeserializeObject<TestDescription>(Encoding.UTF8.GetString(File.ReadAllBytes(file)));
             Stopwatch sw = new Stopwatch();
             sw.Start();
@@ -34,7 +34,7 @@ namespace TioTests
             if (test.Output == result.Output)
             {
                 if (config.UseConsoleCodes) Console.ForegroundColor = ConsoleColor.Green;
-                Logger.LogLine(config.UseConsoleCodes ? $"{name} - PASS ({time})" : $"- PASS ({time})");
+                Logger.LogLine(config.UseConsoleCodes ? $"{name} - PASS ({time})" : $"{counter} {name} - PASS ({time})");
                 if (config.UseConsoleCodes)  Console.ResetColor();
                 if (config.DisplayDebugInfoOnSuccess)
                 {
@@ -54,7 +54,7 @@ namespace TioTests
             else
             {
                 if (config.UseConsoleCodes)  Console.ForegroundColor = ConsoleColor.Red;
-                Logger.LogLine(config.UseConsoleCodes ? $"{name} - FAIL ({time})" : $"- FAIL ({time})");
+                Logger.LogLine(config.UseConsoleCodes ? $"{name} - FAIL ({time})" : $"{counter} {name} - FAIL ({time})");
                 if (config.UseConsoleCodes)  Console.ResetColor();
                 if (config.DisplayDebugInfoOnError)
                 {
@@ -79,8 +79,19 @@ namespace TioTests
         {
             HttpClient client = new HttpClient { BaseAddress = new Uri(configRunUrl) };
             HttpContent z = new ByteArrayContent(test.GetBytes());
-            HttpResponseMessage response = client.PostAsync(configRunUrl, z).Result;
-            string s = response.Content.ReadAsStringAsync().Result;
+            string s;
+            try
+            {
+                HttpResponseMessage response = client.PostAsync(configRunUrl, z).Result;
+                s = response.Content.ReadAsStringAsync().Result;
+            }
+            catch (AggregateException ex)
+            {
+                return new RunResult
+                {
+                    Warnings = new List<string> { $"Can't connect to [{configRunUrl}]",$"{ex}" }
+                };
+            }
             if (s.Length < 16)
             {
                 return new RunResult

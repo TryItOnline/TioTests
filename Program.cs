@@ -32,17 +32,17 @@ namespace TioTests
                 int counter = 0;
                 foreach (string file in files)
                 {
-                    Logger.Log($"[{++counter}/{files.Length}] ");
-                    TestRunner.RunTest(file, config);
+                    //Logger.Log($"[{++counter}/{files.Length}] ");
+                    TestRunner.RunTest(file, config, $"[{++counter}/{files.Length}]");
                 }
             }
             else if (File.Exists(config.Test))
             {
-                TestRunner.RunTest(config.Test, config);
+                TestRunner.RunTest(config.Test, config,"[1/1]");
             }
             else if (File.Exists(config.Test + ".json"))
             {
-                TestRunner.RunTest(config.Test + ".json", config);
+                TestRunner.RunTest(config.Test + ".json", config,"1/1");
             }
             else
             {

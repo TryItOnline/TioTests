@@ -4,5 +4,5 @@
   "TrimWhitespacesFromResults": true,
   "DisplayDebugInfoOnError": true,
   "DisplayDebugInfoOnSuccess": false,
-  "UseConsoleCodes": true 
+  "UseConsoleCodes": true
 }
