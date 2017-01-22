@@ -7,7 +7,8 @@
   "dependencies": {
     "System.Net.Http": "*",
     "System.IO.Compression": "*",
-    "Newtonsoft.Json": "*"
+    "Newtonsoft.Json": "*",
+    "Microsoft.Extensions.CommandLineUtils" :  "*"
   },
   "frameworks": {
     "netcoreapp1.0": {
