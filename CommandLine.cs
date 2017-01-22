@@ -38,6 +38,12 @@ namespace TioTests
                 CommandOptionType.SingleValue
             );
 
+            CommandOption useConsoleCodes = cla.Option(
+                "-d | --use-console-codes",
+                "If on will use ASCII console codes. Set to off when redirecting the output to a file. Specify on or off. UseConsoleCodes in config.json",
+                CommandOptionType.SingleValue
+            );
+
             cla.HelpOption("-? | -h | --help");
             cla.OnExecute(() =>
             {
@@ -60,6 +66,10 @@ namespace TioTests
                 if (dumpOnSuccess.HasValue())
                 {
                     SetBooleanOption(dumpOnSuccess, cla, b => config.DisplayDebugInfoOnSuccess = b);
+                }
+                if (useConsoleCodes.HasValue())
+                {
+                    SetBooleanOption(useConsoleCodes, cla, b => config.UseConsoleCodes = b);
                 }
                 return 0;
             });
