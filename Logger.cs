@@ -7,7 +7,7 @@ namespace TioTests
         private static bool _timeFlag = true;
         private static string GetTime()
         {
-            return DateTime.UtcNow.ToString("dd MMM hh:mm:ss UTC");
+            return DateTime.UtcNow.ToString("dd MMM HH:mm:ss UTC");
         }
         public static void Log(string message, bool setTime = false)
         {
