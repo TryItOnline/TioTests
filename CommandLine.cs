@@ -70,7 +70,7 @@ namespace TioTests
             }
             catch (CommandParsingException ex)
             {
-                Console.WriteLine(ex.Message);
+                Logger.LogLine(ex.Message);
                 cla.ShowHelp();
             }
         }

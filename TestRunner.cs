@@ -15,7 +15,7 @@ namespace TioTests
         {
             var name = file.EndsWith(".json") ? file.Substring(0, file.Length - ".json".Length) : file;
             name = Path.GetFileName(name);
-            Console.Write($"{name}...");
+            Logger.Log($"{name}...");
             TestDescription test = JsonConvert.DeserializeObject<TestDescription>(Encoding.UTF8.GetString(File.ReadAllBytes(file)));
             Stopwatch sw = new Stopwatch();
             sw.Start();
@@ -27,11 +27,11 @@ namespace TioTests
             {
                 result.Output = result.Output?.Trim("\n\r\t ".ToCharArray());
             }
-            Console.Write($"\r{string.Empty.PadLeft(name.Length + 3)}\r");
+            Logger.Log($"\r{string.Empty.PadLeft(name.Length + 3)}\r");
             if (test.Output == result.Output)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"{name} - PASS ({time})");
+                Logger.Log($"{name} - PASS ({time})");
                 Console.ResetColor();
                 if (config.DisplayDebugInfoOnSuccess)
                 {
@@ -39,34 +39,34 @@ namespace TioTests
                     {
                         foreach (string warning in result.Warnings)
                         {
-                            Console.WriteLine($"Warning: {warning}");
+                            Logger.LogLine($"Warning: {warning}");
                         }
                     }
                     if (!string.IsNullOrWhiteSpace(result.Debug))
                     {
-                        Console.WriteLine($"Debug {result.Debug}");
+                        Logger.LogLine($"Debug {result.Debug}");
                     }
                 }
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"{name} - FAIL ({time})");
+                Logger.LogLine($"{name} - FAIL ({time})");
                 Console.ResetColor();
                 if (config.DisplayDebugInfoOnError)
                 {
-                    Console.WriteLine($"Expected: {test.Output}");
-                    Console.WriteLine($"Got: {result.Output}");
+                    Logger.LogLine($"Expected: {test.Output}");
+                    Logger.LogLine($"Got: {result.Output}");
                     if (result.Warnings != null)
                     {
                         foreach (string warning in result.Warnings)
                         {
-                            Console.WriteLine($"Warning: {warning}");
+                            Logger.LogLine($"Warning: {warning}");
                         }
                     }
                     if (!string.IsNullOrWhiteSpace(result.Debug))
                     {
-                        Console.WriteLine($"Debug {result.Debug}");
+                        Logger.LogLine($"Debug {result.Debug}");
                     }
                 }
             }

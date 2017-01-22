@@ -14,7 +14,7 @@ namespace TioTests
             }
             catch (Exception e)
             {
-                Console.WriteLine("Unexpected error: " + e);
+                Logger.LogLine("Unexpected error: " + e);
                 Environment.Exit(-1);
             }
         }
@@ -32,7 +32,7 @@ namespace TioTests
                 int counter = 0;
                 foreach (string file in files)
                 {
-                    Console.Write($"[{++counter}/{files.Length}] ");
+                    Logger.Log($"[{++counter}/{files.Length}] ");
                     TestRunner.RunTest(file, config);
                 }
             }
@@ -46,7 +46,7 @@ namespace TioTests
             }
             else
             {
-                Console.WriteLine($"{config.Test} not found");
+                Logger.LogLine($"{config.Test} not found");
             }
         }
     }
