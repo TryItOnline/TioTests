@@ -6,8 +6,8 @@
     "PASS": "color: green;"
   },
   "lines": {
-    "FAIL": "font-weight: bold;"
-    "MISSING": "font-weight: bold;"
+    "FAIL": "font-weight: bold;",
+    "MISSING": "font-weight: bold;",
     "EXTRA": "font-weight: bold;"
   }
 }
