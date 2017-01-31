@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "emacs-lisp",
+    "Header": null,
+    "Footer": null,
+    "Code": "(princ \"Hello, World!\")",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}
