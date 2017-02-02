@@ -75,6 +75,31 @@ namespace TioTests
             }
         }
 
+
+        //private static void Decode(byte[] toDecompress)
+        //{
+        //    byte[] header = {0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x03};
+
+        //    byte[] n = new byte[toDecompress.Length + header.Length];
+        //    Array.Copy(header, 0, n, 0, header.Length);
+        //    Array.Copy(toDecompress, 0, n, header.Length, toDecompress.Length);
+
+        //    using (MemoryStream compressed = new MemoryStream(n))
+        //    using (GZipStream compressor = new GZipStream(compressed, CompressionMode.Decompress))
+        //    {
+        //        MemoryStream res = new MemoryStream();
+        //        byte[] buffer = new byte[1024];
+        //        int nRead;
+        //        while ((nRead = compressor.Read(buffer, 0, buffer.Length)) > 0)
+        //        {
+        //            res.Write(buffer, 0, nRead);
+        //        }
+        //        res.Flush();
+        //        string s = Encoding.UTF8.GetString(res.ToArray());
+        //        s.ToString();
+        //    }
+        //}
+
         private static RunResult Execute(Runnable test, string configRunUrl)
         {
             HttpClient client = new HttpClient { BaseAddress = new Uri(configRunUrl) };
