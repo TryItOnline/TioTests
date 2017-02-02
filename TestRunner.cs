@@ -103,6 +103,7 @@ namespace TioTests
         private static RunResult Execute(Runnable test, string configRunUrl)
         {
             HttpClient client = new HttpClient { BaseAddress = new Uri(configRunUrl) };
+            client.Timeout = TimeSpan.FromSeconds(80);
             HttpContent z = new ByteArrayContent(test.GetBytes());
             string s;
             try

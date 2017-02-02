@@ -1,5 +1,5 @@
 ﻿{
-  "RunUrl": "https://backend.tryitonline.net/run/no-cache",
+  "RunUrl": "https://backend.tryitonline.net/run/no-cache/",
   "Test": "HelloWorldTests",
   "TrimWhitespacesFromResults": true,
   "DisplayDebugInfoOnError": true,

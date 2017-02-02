@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "templates",
+    "Header": null,
+    "Footer": null,
+    "Code": "St<72,'e','l','l','o',44,32,87,'o',114,'l','d',33>",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}
