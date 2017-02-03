@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "stacked",
+    "Header": null,
+    "Footer": null,
+    "Code": "'Hello, World!' out",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

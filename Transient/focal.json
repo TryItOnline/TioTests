@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "focal",
+    "Header": null,
+    "Footer": null,
+    "Code": "10.10 t \"Hello, World!\"\ng",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}

@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "mathics",
+    "Header": null,
+    "Footer": null,
+    "Code": "Print@\"Hello, World!\"",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}
