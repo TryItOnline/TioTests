@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "julia3",
+    "Header": null,
+    "Footer": null,
+    "Code": "println(\"Hello, World!\")",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}
