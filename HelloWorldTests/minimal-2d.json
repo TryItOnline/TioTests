@@ -1,0 +1,14 @@
+{
+  "Input": {
+    "Language": "minimal-2d",
+    "Header": null,
+    "Footer": null,
+    "Code": ">++  R<+++D R >++++++>+++++++++>++++++++++D
+D++>R/ </ +/U/-<<<<<<+++++++++++>+++>++++>L
++   UU/->+LD    .++++++++++>.--------.----L
+R+++.>++.>--..+++.>.>-.>--.--------.+++.--U",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, world"
+}
