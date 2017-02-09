@@ -3,7 +3,7 @@
     "Language": "k-ok",
     "Header": null,
     "Footer": null,
-    "Code": "!`0:\"Hello, World!\"",
+    "Code": "{}`0:\"Hello, World!\"",
     "Input": null,
     "CommandLineArguments": null
   },
