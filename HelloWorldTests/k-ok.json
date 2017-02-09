@@ -3,9 +3,9 @@
     "Language": "k-ok",
     "Header": null,
     "Footer": null,
-    "Code": "\"Hello, World!\"",
+    "Code": "!`0:\"Hello, World!\"",
     "Input": null,
     "CommandLineArguments": null
   },
-  "Output": "\"Hello, World!\""
+  "Output": "Hello, World!"
 }
