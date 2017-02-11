@@ -21,7 +21,10 @@ namespace TioTests
 
         private static void Execute(string[] args)
         {
-            Config config = JsonConvert.DeserializeObject<Config>(File.ReadAllText("config.json"));
+            string configPath = "config.json";
+            Config config = File.Exists(configPath) ?
+                JsonConvert.DeserializeObject<Config>(File.ReadAllText(configPath)) :
+                new Config { TrimWhitespacesFromResults = true, DisplayDebugInfoOnError = true, UseConsoleCodes = true };
 
             CommandLine.ApplyCommandLineArguments(args, config);
 
