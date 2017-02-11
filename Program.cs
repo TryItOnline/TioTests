@@ -49,7 +49,7 @@ namespace TioTests
             }
             else
             {
-                Logger.LogLine($"{config.Test} not found");
+                Logger.LogLine($"Tests '{config.Test}' not found");
             }
         }
     }
