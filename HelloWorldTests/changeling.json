@@ -1,0 +1,20 @@
+{
+  "Input": {
+    "Language": "changeling",
+    "Header": null,
+    "Footer": null,
+    "Code": "\"IpQ:AQ..
+\"\"2(-znK]
+\"\" \"Tr4r[
+\"\")$dNcA.
+\"\" #!&...
+.........
+.........
+.........
+.........
+",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}
