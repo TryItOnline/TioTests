@@ -1,0 +1,11 @@
+{
+  "Input": {
+    "Language": "sqlite",
+    "Header": null,
+    "Footer": null,
+    "Code": "select 'Hello, World!';",
+    "Input": null,
+    "CommandLineArguments": null
+  },
+  "Output": "Hello, World!"
+}
