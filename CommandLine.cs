@@ -40,7 +40,7 @@ namespace TioTests
 
             CommandOption useConsoleCodes = cla.Option(
                 "-d | --use-console-codes",
-                "If on will use ASCII console codes. Set to off when redirecting the output to a file. Specify on or off. UseConsoleCodes in config.json",
+                "If on will use ANSI escape codes. Set to off when redirecting the output to a file. Specify on or off. UseConsoleCodes in config.json",
                 CommandOptionType.SingleValue
             );
 
