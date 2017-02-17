@@ -50,6 +50,12 @@ namespace TioTests
                 CommandOptionType.SingleValue
             );
 
+            CommandOption retry = cla.Option(
+                "-r | --retries",
+                "Specify how many times to retry a test if connection failed",
+                CommandOptionType.SingleValue
+            );
+
             cla.HelpOption("-? | -h | --help");
             cla.OnExecute(() =>
             {
@@ -82,6 +88,14 @@ namespace TioTests
                     bool? val = null;
                     SetBooleanOption(checkMissing, cla, b => val = b);
                     config.CheckUrl = val.HasValue && !val.Value ? null : checkMissing.Value();
+                }
+                if (retry.HasValue())
+                {
+                    int retries = 0;
+                    if (int.TryParse(retry.Value(), out retries))
+                    {
+                        config.Retries = retries;    
+                    }
                 }
                 return 0;
             });

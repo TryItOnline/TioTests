@@ -63,8 +63,19 @@ namespace TioTests
         private static void CheckPath(string checkUrl, string testFolder, bool useConsoleCodes)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage response =  client.GetAsync(checkUrl).Result;
-            var content = response.Content.ReadAsStringAsync().Result;
+
+            string s;
+            try
+            {
+                HttpResponseMessage response =  client.GetAsync(checkUrl).Result;
+                s = response.Content.ReadAsStringAsync().Result;
+            }
+            catch (AggregateException ex)
+            {
+                if (useConsoleCodes)  Console.ForegroundColor = ConsoleColor.Red;
+                Logger.LogLine($"ERROR: Could not check for missing languages {ex}");
+                if (useConsoleCodes)  Console.ResetColor();
+            }
 
             var j = (JObject)JsonConvert.DeserializeObject(content);
             var listFromUrl = j["practical"]["byId"]

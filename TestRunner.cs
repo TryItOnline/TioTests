@@ -17,11 +17,29 @@ namespace TioTests
             name = Path.GetFileName(name);
             if (config.UseConsoleCodes) Logger.Log($"{counter} {name}...");
             TestDescription test = JsonConvert.DeserializeObject<TestDescription>(Encoding.UTF8.GetString(File.ReadAllBytes(file)));
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            RunResult result = Execute(test.Input, config.RunUrl);
-            sw.Stop();
-            string time = TimeFormatter.LargestIntervalWithUnits(sw.Elapsed);
+            
+            RunResult result;
+            string time;
+            int retried = 0;
+            while(true)
+            {
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                result = Execute(test.Input, config.RunUrl);
+                sw.Stop();
+                time = TimeFormatter.LargestIntervalWithUnits(sw.Elapsed);
+                if (!result.HttpFailure || retried++ >= config.Retries)
+                {
+                    break;
+                }
+                if (config.UseConsoleCodes)
+                {
+                    Logger.Log($"\r{string.Empty.PadLeft(name.Length + 23)}\r", true);
+                }
+                if (config.UseConsoleCodes)  Console.ForegroundColor = ConsoleColor.Red;
+                Logger.Log(config.UseConsoleCodes ? $"{name} - FAIL ({time}) Retrying({retried})..." : $"{counter} {name} - FAIL ({time})");
+                if (config.UseConsoleCodes)  Console.ResetColor();
+            }
 
             if (config.TrimWhitespacesFromResults)
             {
@@ -115,7 +133,8 @@ namespace TioTests
             {
                 return new RunResult
                 {
-                    Warnings = new List<string> { $"Can't connect to [{configRunUrl}]",$"{ex}" }
+                    Warnings = new List<string> { $"Can't connect to [{configRunUrl}]",$"{ex}" },
+                    HttpFailure = true
                 };
             }
             if (s.Length < 16)

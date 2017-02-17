@@ -9,5 +9,6 @@
         public bool DisplayDebugInfoOnSuccess { get; set; }
         public bool UseConsoleCodes { get; set; }
         public string CheckUrl { get; set; }
+        public int Retries { get; set; }
     }
 }
