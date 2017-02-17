@@ -44,6 +44,12 @@ namespace TioTests
                 CommandOptionType.SingleValue
             );
 
+            CommandOption checkMissing = cla.Option(
+                "-c | --check-missing-tests",
+                "Provide url to tio language.json. Pass off to switch off. The command will print out any discrepancies between languages listed there and in the folder specified by -n | --test option",
+                CommandOptionType.SingleValue
+            );
+
             cla.HelpOption("-? | -h | --help");
             cla.OnExecute(() =>
             {
@@ -71,6 +77,12 @@ namespace TioTests
                 {
                     SetBooleanOption(useConsoleCodes, cla, b => config.UseConsoleCodes = b);
                 }
+                if (checkMissing.HasValue())
+                {
+                    bool? val = null;
+                    SetBooleanOption(checkMissing, cla, b => val = b);
+                    config.CheckUrl = val.HasValue && !val.Value ? null : checkMissing.Value();
+                }
                 return 0;
             });
 
@@ -85,7 +97,7 @@ namespace TioTests
             }
         }
 
-        private static void SetBooleanOption(CommandOption trim, CommandLineApplication cla, Action<bool> set)
+        private static void SetBooleanOption(CommandOption trim, CommandLineApplication cla, Action<bool> set, bool throwIfDoesNotMatch = true)
         {
             string[] yes = { "on", "true", "enable", "+", "yes" };
             string[] no = { "off", "false", "disable", "-", "no" };
@@ -99,7 +111,10 @@ namespace TioTests
             }
             else
             {
-                throw new CommandParsingException(cla, $"Unrecognized value {trim.Value()} of option {trim.LongName}");
+                if (throwIfDoesNotMatch)
+                {
+                    throw new CommandParsingException(cla, $"Unrecognized value {trim.Value()} of option {trim.LongName}");
+                }
             }
         }
     }

@@ -8,5 +8,6 @@
         public bool DisplayDebugInfoOnError { get; set; }
         public bool DisplayDebugInfoOnSuccess { get; set; }
         public bool UseConsoleCodes { get; set; }
+        public string CheckUrl { get; set; }
     }
 }

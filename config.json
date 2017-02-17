@@ -4,5 +4,6 @@
   "TrimWhitespacesFromResults": true,
   "DisplayDebugInfoOnError": true,
   "DisplayDebugInfoOnSuccess": false,
-  "UseConsoleCodes": true
+  "UseConsoleCodes": true,
+  "CheckUrl": "https://tryitonline.net/languages.json"
 }
