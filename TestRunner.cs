@@ -34,7 +34,7 @@ namespace TioTests
                 }
                 if (config.UseConsoleCodes)
                 {
-                    Logger.Log($"\r{string.Empty.PadLeft(name.Length + 23)}\r", true);
+                    Logger.Log($"\r{string.Empty.PadLeft(name.Length + 40)}\r", true);
                 }
                 if (config.UseConsoleCodes)  Console.ForegroundColor = ConsoleColor.Red;
                 if (config.UseConsoleCodes)
