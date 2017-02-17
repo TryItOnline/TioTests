@@ -75,6 +75,7 @@ namespace TioTests
                 if (useConsoleCodes)  Console.ForegroundColor = ConsoleColor.Red;
                 Logger.LogLine($"ERROR: Could not check for missing languages {ex}");
                 if (useConsoleCodes)  Console.ResetColor();
+                return;
             }
 
             var j = (JObject)JsonConvert.DeserializeObject(s);
