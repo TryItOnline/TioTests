@@ -37,7 +37,15 @@ namespace TioTests
                     Logger.Log($"\r{string.Empty.PadLeft(name.Length + 23)}\r", true);
                 }
                 if (config.UseConsoleCodes)  Console.ForegroundColor = ConsoleColor.Red;
-                Logger.Log(config.UseConsoleCodes ? $"{name} - FAIL ({time}) Retrying({retried})..." : $"{counter} {name} - FAIL ({time})\n");
+                if (config.UseConsoleCodes)
+                {
+                    Logger.Log($"{name} - FAIL ({time}) Retrying({retried})..." );
+
+                }
+                else
+                {
+                    Logger.LogLine($"{counter} {name} - FAIL ({time}) Retrying({retried})...");
+                }
                 if (config.UseConsoleCodes)  Console.ResetColor();
             }
 
