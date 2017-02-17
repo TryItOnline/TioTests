@@ -77,7 +77,7 @@ namespace TioTests
                 if (useConsoleCodes)  Console.ResetColor();
             }
 
-            var j = (JObject)JsonConvert.DeserializeObject(content);
+            var j = (JObject)JsonConvert.DeserializeObject(s);
             var listFromUrl = j["practical"]["byId"]
                 .Select(x => (string)((dynamic)x).Name)
                 .Union(j["recreational"]["byId"]
