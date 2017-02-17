@@ -34,12 +34,12 @@ namespace TioTests
                 }
                 if (config.UseConsoleCodes)
                 {
-                    Logger.Log($"\r{string.Empty.PadLeft(name.Length + 40)}\r", true);
+                    //Logger.Log($"\r{string.Empty.PadLeft(name.Length + 40)}\r", true);
                 }
                 if (config.UseConsoleCodes)  Console.ForegroundColor = ConsoleColor.Red;
                 if (config.UseConsoleCodes)
                 {
-                    Logger.Log($"{name} - FAIL ({time}) Retrying({retried})..." );
+                    Logger.Log($"{name} - FAIL ({time}) Retrying({retried})...\x1b[K" );
 
                 }
                 else
@@ -55,12 +55,13 @@ namespace TioTests
             }
             if (config.UseConsoleCodes)
             {
-                Logger.Log($"\r{string.Empty.PadLeft(name.Length + 23)}\r", true);
+                //Logger.Log($"\r{string.Empty.PadLeft(name.Length + 23)}\r", true);
+                Logger.Log($"\r", true);
             }
             if (test.Output == result.Output)
             {
                 if (config.UseConsoleCodes) Console.ForegroundColor = ConsoleColor.Green;
-                Logger.LogLine(config.UseConsoleCodes ? $"{name} - PASS ({time})" : $"{counter} {name} - PASS ({time})");
+                Logger.LogLine(config.UseConsoleCodes ? $"{name} - PASS ({time})\x1b[K" : $"{counter} {name} - PASS ({time})");
                 if (config.UseConsoleCodes)  Console.ResetColor();
                 if (config.DisplayDebugInfoOnSuccess)
                 {
@@ -80,7 +81,7 @@ namespace TioTests
             else
             {
                 if (config.UseConsoleCodes)  Console.ForegroundColor = ConsoleColor.Red;
-                Logger.LogLine(config.UseConsoleCodes ? $"{name} - FAIL ({time})" : $"{counter} {name} - FAIL ({time})");
+                Logger.LogLine(config.UseConsoleCodes ? $"{name} - FAIL ({time})\x1b[K" : $"{counter} {name} - FAIL ({time})");
                 if (config.UseConsoleCodes)  Console.ResetColor();
                 if (config.DisplayDebugInfoOnError)
                 {

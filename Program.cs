@@ -73,7 +73,7 @@ namespace TioTests
             catch (AggregateException ex)
             {
                 if (useConsoleCodes)  Console.ForegroundColor = ConsoleColor.Red;
-                Logger.LogLine($"ERROR: Could not check for missing languages {ex}");
+                Logger.LogLine($"ERROR: Could not check for missing languages {ex}\x1b[K");
                 if (useConsoleCodes)  Console.ResetColor();
                 return;
             }
@@ -99,7 +99,7 @@ namespace TioTests
             foreach (string language in missing)
             {
                 if (useConsoleCodes)  Console.ForegroundColor = ConsoleColor.Red;
-                Logger.LogLine($"MISSING: {language}");
+                Logger.LogLine($"MISSING: {language}\x1b[K");
                 if (useConsoleCodes)  Console.ResetColor();
             }
 
@@ -114,7 +114,7 @@ namespace TioTests
             if (extra.Count == 0 && missing.Count == 0)
             {
                 if (useConsoleCodes)  Console.ForegroundColor = ConsoleColor.Green;
-                Logger.LogLine("PASS: Tests are up to date");
+                Logger.LogLine("PASS: Tests are up to date\x1b[K");
                 if (useConsoleCodes)  Console.ResetColor();
             }
         }
