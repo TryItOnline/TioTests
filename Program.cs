@@ -63,6 +63,7 @@ namespace TioTests
         private static void CheckPath(string checkUrl, string testFolder, bool useConsoleCodes)
         {
             HttpClient client = new HttpClient();
+            client.Timeout = TimeSpan.FromSeconds(30);
 
             string s;
             try
