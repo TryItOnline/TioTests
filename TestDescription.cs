@@ -42,7 +42,7 @@ namespace TioTests
                                 foreach (string value in values)
                                 {
                                     ms.Write(Encoding.UTF8.GetBytes(value));
-                                    ms.Write(BitConverter.GetBytes(0).Reverse().ToArray());
+                                    ms.Write(zero);
                                 }
                             }
                             else if (pair.Value.Type == JTokenType.String)
