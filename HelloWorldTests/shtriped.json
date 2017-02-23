@@ -3,35 +3,7 @@
     "Language": "shtriped",
     "Header": null,
     "Footer": null,
-    "Code": "e n
-e b
-i b
-+ x y
- +
-  i x
-  d y
-  +
- +
- d x
-0
- + b b b
-1
- + b n n
- 0
-1
-0
-1
-0
-1
-1
-0
-0
-0
-1
-0
-0
-1
-s n",
+    "Code": "e n\ne b\ni b\n+ x y\n +\n  i x\n  d y\n  +\n +\n d x\n0\n + b b b\n1\n + b n n\n 0\n1\n0\n1\n0\n1\n1\n0\n0\n0\n1\n0\n0\n1\ns n",
     "Input": null,
     "CommandLineArguments": null
   },

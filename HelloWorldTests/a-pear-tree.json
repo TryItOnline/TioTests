@@ -3,8 +3,7 @@
     "Language": "a-pear-tree",
     "Header": null,
     "Footer": null,
-    "Code": "#r3TQJ\n
-print(\"Hello, World!\")",
+    "Code": "#r3TQJ\nprint(\"Hello, World!\")",
     "Input": null,
     "CommandLineArguments": null
   },

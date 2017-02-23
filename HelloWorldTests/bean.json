@@ -3,8 +3,7 @@
     "Language": "bean",
     "Header": null,
     "Footer": null,
-    "Code": "00000000: 2623 8100 c8e5 ecec efac a0d7 eff2 ece4  &#..............
-00000010: 21                                       !",
+    "Code": "00000000: 2623 8100 c8e5 ecec efac a0d7 eff2 ece4  &#..............\n00000010: 21                                       !",
     "Input": null,
     "CommandLineArguments": null
   },

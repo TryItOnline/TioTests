@@ -3,19 +3,7 @@
     "Language": "wsf",
     "Header": null,
     "Footer": null,
-    "Code": "                    
-  
-               
-                     
-       
-  	 	 	 	  	
-	 
-    		 
-  		              				      		 
-    			 	                               		 
-		      		 	 	 	 	 	 			 	 	 	 	 	 	 	 			 
-  		 
-		",
+    "Code": "                    \n  \n               \n                     \n       \n  \t \t \t \t  \t\n\t \n    \t\t \n  \t\t              \t\t\t\t      \t\t \n    \t\t\t \t                               \t\t \n\t\t      \t\t \t \t \t \t \t \t\t\t \t \t \t \t \t \t \t \t\t\t \n  \t\t \n\t\t",
     "Input": null,
     "CommandLineArguments": null
   },
