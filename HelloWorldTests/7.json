@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "7",
-    "Header": null,
-    "Footer": null,
-    "Code": "5325101303040432004513151401430134321027403",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["7"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "5325101303040432004513151401430134321027403" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

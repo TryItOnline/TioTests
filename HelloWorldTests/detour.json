@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "detour",
-    "Header": null,
-    "Footer": null,
-    "Code": "`u\n@\"Hello, World!\"",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["detour"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "`u\n@\"Hello, World!\"" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

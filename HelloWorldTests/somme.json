@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "somme",
-    "Header": null,
-    "Footer": null,
-    "Code": "8s+vi:7+::J:^B4*25p9s6+v:J:6-:8-25pim,",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["somme"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "8s+vi:7+::J:^B4*25p9s6+v:J:6-:8-25pim," } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

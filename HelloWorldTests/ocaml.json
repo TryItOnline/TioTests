@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "ocaml",
-    "Header": null,
-    "Footer": null,
-    "Code": "print_string \"Hello, World!\";;",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["ocaml"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "print_string \"Hello, World!\";;" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

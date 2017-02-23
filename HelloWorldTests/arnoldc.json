@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "arnoldc",
-    "Header": null,
-    "Footer": null,
-    "Code": "IT'S SHOWTIME\nTALK TO THE HAND \"Hello, World!\"\nYOU HAVE BEEN TERMINATED",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["arnoldc"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "IT'S SHOWTIME\nTALK TO THE HAND \"Hello, World!\"\nYOU HAVE BEEN TERMINATED" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "ruby",
-    "Header": null,
-    "Footer": null,
-    "Code": "puts 'Hello, World!'",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["ruby"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "puts 'Hello, World!'" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

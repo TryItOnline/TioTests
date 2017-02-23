@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "whitespace",
-    "Header": null,
-    "Footer": null,
-    "Code": "   \n  \t\t  \t \t \n  \t\t\t\t\n   \t\n   \t\t\t\n   \t  \n  \t\t \t  \n  \t\t  \t \t\t\n  \t\t\t\t\t\t\t\n   \t  \n   \t\n \n   \t\t\t \n  \t\t   \t\t\n\n  \n \n \n\t \t\n   \t\t \t \t\t\n\t   \t\n  \n \n\n\n  \t\n\n\n\n",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["whitespace"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "   \n  \t\t  \t \t \n  \t\t\t\t\n   \t\n   \t\t\t\n   \t  \n  \t\t \t  \n  \t\t  \t \t\t\n  \t\t\t\t\t\t\t\n   \t  \n   \t\n \n   \t\t\t \n  \t\t   \t\t\n\n  \n \n \n\t \t\n   \t\t \t \t\t\n\t   \t\n  \n \n\n\n  \t\n\n\n\n" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

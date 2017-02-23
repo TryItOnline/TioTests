@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "rail",
-    "Header": null,
-    "Footer": null,
-    "Code": "$'main'\n -[Hello, World!]o#",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["rail"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "$'main'\n -[Hello, World!]o#" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

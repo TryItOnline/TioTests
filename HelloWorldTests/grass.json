@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "grass",
-    "Header": null,
-    "Footer": null,
-    "Code": "wWWwwww",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["grass"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "wWWwwww" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "w"
 }

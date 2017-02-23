@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "vala",
-    "Header": null,
-    "Footer": null,
-    "Code": "void main () { print (\"Hello, World!\");}",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["vala"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "void main () { print (\"Hello, World!\");}" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

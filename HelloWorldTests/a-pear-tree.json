@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "a-pear-tree",
-    "Header": null,
-    "Footer": null,
-    "Code": "#r3TQJ\nprint(\"Hello, World!\")",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["a-pear-tree"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "#r3TQJ\nprint(\"Hello, World!\")" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "cpp-gcc",
-    "Header": null,
-    "Footer": null,
-    "Code": "#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello, World!\"); }",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["cpp-gcc"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "#include <stdio.h>\nint main(int argc, char **argv) { printf(\"Hello, World!\"); }" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

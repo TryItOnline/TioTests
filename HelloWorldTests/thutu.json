@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "thutu",
-    "Header": null,
-    "Footer": null,
-    "Code": "/^=1$/Hello, World!=n=x=9/",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["thutu"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "/^=1$/Hello, World!=n=x=9/" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

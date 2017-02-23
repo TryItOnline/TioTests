@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "trigger",
-    "Header": null,
-    "Footer": null,
-    "Code": "HHHeeelll#lllooo,,,   WWWooorrrlllddd!!!",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["trigger"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "HHHeeelll#lllooo,,,   WWWooorrrlllddd!!!" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

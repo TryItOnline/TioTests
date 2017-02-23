@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "beeswax",
-    "Header": null,
-    "Footer": null,
-    "Code": "_`Hello, World!",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["beeswax"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "_`Hello, World!" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

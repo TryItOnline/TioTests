@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "vitsy",
-    "Header": null,
-    "Footer": null,
-    "Code": "\"!dlroW ,olleH\"Z",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["vitsy"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "\"!dlroW ,olleH\"Z" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

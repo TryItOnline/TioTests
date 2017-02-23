@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "mathics",
-    "Header": null,
-    "Footer": null,
-    "Code": "Print@\"Hello, World!\"",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["mathics"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "Print@\"Hello, World!\"" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "cardinal",
-    "Header": null,
-    "Footer": null,
-    "Code": "%\"Hello, World!\";x",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["cardinal"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "%\"Hello, World!\";x" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

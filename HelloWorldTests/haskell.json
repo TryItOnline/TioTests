@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "haskell",
-    "Header": null,
-    "Footer": null,
-    "Code": "main=putStr\"Hello, World!\"",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["haskell"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "main=putStr\"Hello, World!\"" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "prelude",
-    "Header": null,
-    "Footer": null,
-    "Code": "92480969393782833909095806(^+^+^^+++!)",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["prelude"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "92480969393782833909095806(^+^+^^+++!)" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

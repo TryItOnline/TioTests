@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "wsf",
-    "Header": null,
-    "Footer": null,
-    "Code": "                    \n  \n               \n                     \n       \n  \t \t \t \t  \t\n\t \n    \t\t \n  \t\t              \t\t\t\t      \t\t \n    \t\t\t \t                               \t\t \n\t\t      \t\t \t \t \t \t \t \t\t\t \t \t \t \t \t \t \t \t\t\t \n  \t\t \n\t\t",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["wsf"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "                    \n  \n               \n                     \n       \n  \t \t \t \t  \t\n\t \n    \t\t \n  \t\t              \t\t\t\t      \t\t \n    \t\t\t \t                               \t\t \n\t\t      \t\t \t \t \t \t \t \t\t\t \t \t \t \t \t \t \t \t\t\t \n  \t\t \n\t\t" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello World!"
 }

@@ -1,13 +1,10 @@
 {
-  "Input": {
-    "Language": "sed",
-    "Header": null,
-    "Footer": null,
-    "Code": "s/.*/Hello, World!/",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["sed"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "s/.*/Hello, World!/" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }
-
-

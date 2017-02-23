@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "lily",
-    "Header": null,
-    "Footer": null,
-    "Code": "print(\"Hello, World!\")",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["lily"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "print(\"Hello, World!\")" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "cubix",
-    "Header": null,
-    "Footer": null,
-    "Code": "./v.o;@?/\"!dlroW\"S',u/\"Hello\"",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["cubix"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "./v.o;@?/\"!dlroW\"S',u/\"Hello\"" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

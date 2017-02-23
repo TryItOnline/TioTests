@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "jellyfish",
-    "Header": null,
-    "Footer": null,
-    "Code": "P\"Hello, World!\"",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["jellyfish"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "P\"Hello, World!\"" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

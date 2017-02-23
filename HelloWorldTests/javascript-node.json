@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "javascript-node",
-    "Header": null,
-    "Footer": null,
-    "Code": "console.log('Hello, World!')",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["javascript-node"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "console.log('Hello, World!')" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

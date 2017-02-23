@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "picolisp",
-    "Header": null,
-    "Footer": null,
-    "Code": "(prinl \"Hello, World!\")(buy)",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["picolisp"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "(prinl \"Hello, World!\")(buy)" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

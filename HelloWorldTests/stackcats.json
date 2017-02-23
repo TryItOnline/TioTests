@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "stackcats",
-    "Header": null,
-    "Footer": null,
-    "Code": "-*(:^-_-_:-_:-_:-_:-_-_:[:^]]:^!-*!->[!_>[!_>[{]>[^-_-_:]]<<<}>[!-:^[[\\\\>]:^[[>:[>:^[<<]]\\\\>[*>+:^:-_]:^[[-_*[>>>[-_[/<]>+^[>[<<]]*>[)",
-    "Input": null,
-    "CommandLineArguments": ["-l"]
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["stackcats"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "-*(:^-_-_:-_:-_:-_:-_-_:[:^]]:^!-*!->[!_>[!_>[{]>[^-_-_:]]<<<}>[!-:^[[\\\\>]:^[[>:[>:^[<<]]\\\\>[*>+:^:-_]:^[[-_*[>>>[-_[/<]>+^[>[<<]]*>[)" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": ["-l"] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

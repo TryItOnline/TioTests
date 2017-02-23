@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "lolcode",
-    "Header": null,
-    "Footer": null,
-    "Code": "HAI 1.2\nVISIBLE \"Hello, World!\"\nKTHXBYE",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["lolcode"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "HAI 1.2\nVISIBLE \"Hello, World!\"\nKTHXBYE" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

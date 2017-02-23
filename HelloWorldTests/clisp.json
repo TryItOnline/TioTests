@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "clisp",
-    "Header": null,
-    "Footer": null,
-    "Code": "(format t \"Hello, World!\")",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["clisp"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "(format t \"Hello, World!\")" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

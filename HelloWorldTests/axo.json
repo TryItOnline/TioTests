@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "axo",
-    "Header": null,
-    "Footer": null,
-    "Code": "\"!dlroW ,o%\n\\%#[<\"Hell<\n >( ^",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["axo"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "\"!dlroW ,o%\n\\%#[<\"Hell<\n >( ^" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

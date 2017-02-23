@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "bean",
-    "Header": null,
-    "Footer": null,
-    "Code": "00000000: 2623 8100 c8e5 ecec efac a0d7 eff2 ece4  &#..............\n00000010: 21                                       !",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["bean"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "00000000: 2623 8100 c8e5 ecec efac a0d7 eff2 ece4  &#..............\n00000010: 21                                       !" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

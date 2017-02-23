@@ -25,7 +25,7 @@ namespace TioTests
             {
                 Stopwatch sw = new Stopwatch();
                 sw.Start();
-                result = Execute(test.Input, config.RunUrl);
+                result = Execute(test.GetInputBytes(), config.RunUrl);
                 sw.Stop();
                 time = TimeFormatter.LargestIntervalWithUnits(sw.Elapsed);
                 if (!result.HttpFailure || retried++ >= config.Retries)
@@ -127,11 +127,14 @@ namespace TioTests
         //    }
         //}
 
-        private static RunResult Execute(Runnable test, string configRunUrl)
+        private static RunResult Execute(byte[] test, string configRunUrl)
         {
-            HttpClient client = new HttpClient { BaseAddress = new Uri(configRunUrl) };
-            client.Timeout = TimeSpan.FromSeconds(30);
-            HttpContent z = new ByteArrayContent(test.GetBytes());
+            HttpClient client = new HttpClient
+            {
+                BaseAddress = new Uri(configRunUrl),
+                Timeout = TimeSpan.FromSeconds(30)
+            };
+            HttpContent z = new ByteArrayContent(test);
             string s;
             try
             {

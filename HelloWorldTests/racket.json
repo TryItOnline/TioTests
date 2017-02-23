@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "racket",
-    "Header": null,
-    "Footer": null,
-    "Code": "#lang racket/base\n(display \"Hello, World!\")",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["racket"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "#lang racket/base\n(display \"Hello, World!\")" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

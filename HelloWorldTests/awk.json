@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "awk",
-    "Header": null,
-    "Footer": null,
-    "Code": "BEGIN{print \"Hello, World!\"}",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["awk"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "BEGIN{print \"Hello, World!\"}" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

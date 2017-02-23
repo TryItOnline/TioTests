@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "tcsh",
-    "Header": null,
-    "Footer": null,
-    "Code": "echo 'Hello, World!'",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["tcsh"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "echo 'Hello, World!'" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

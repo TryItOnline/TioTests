@@ -1,12 +1,10 @@
 {
-  "Input": {
-    "Language": "fourier",
-    "Header": null,
-    "Footer": null,
-    "Code": "72a101a+7aa+3a44a32a87a111a+3a-6a-8a33a",
-    "Input": null,
-    "Format": "ASCII",
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["fourier"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "72a101a+7aa+3a44a32a87a111a+3a-6a-8a33a" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

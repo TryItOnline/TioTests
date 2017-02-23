@@ -1,13 +1,10 @@
 {
-  "Input": {
-    "Language": "scheme-guile",
-    "Header": null,
-    "Footer": null,
-    "Code": "(display \"Hello, World!\")",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["scheme-guile"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "(display \"Hello, World!\")" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }
-
-

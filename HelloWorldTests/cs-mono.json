@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "cs-mono",
-    "Header": null,
-    "Footer": null,
-    "Code": "class a{static void Main(){System.Console.Write(\"Hello, World!\");}}",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["cs-mono"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "class a{static void Main(){System.Console.Write(\"Hello, World!\");}}" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

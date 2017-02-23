@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "stacked",
-    "Header": null,
-    "Footer": null,
-    "Code": "'Hello, World!' out",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["stacked"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "'Hello, World!' out" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

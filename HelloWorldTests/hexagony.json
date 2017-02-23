@@ -1,12 +1,10 @@
 {
-  "Input": {
-    "Language": "hexagony",
-    "Header": null,
-    "Footer": null,
-    "Code": "H;e;P1;@/;W;o;/l;;o;Q/r;l;d;2;P0",
-    "Input": null,
-    "Format": "ASCII",
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["hexagony"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "H;e;P1;@/;W;o;/l;;o;Q/r;l;d;2;P0" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

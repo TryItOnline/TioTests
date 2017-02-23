@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "retina",
-    "Header": null,
-    "Footer": null,
-    "Code": "\nHello, World!",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["retina"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "\nHello, World!" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

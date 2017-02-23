@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "bubblegum",
-    "Header": null,
-    "Footer": null,
-    "Code": "0:15274d5062a99a296b6de2",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["bubblegum"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "0:15274d5062a99a296b6de2" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

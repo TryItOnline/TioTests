@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "d",
-    "Header": null,
-    "Footer": null,
-    "Code": "import std.stdio; void main(){writeln(\"Hello, World!\");}",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["d"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "import std.stdio; void main(){writeln(\"Hello, World!\");}" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

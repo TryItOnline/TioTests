@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "fish",
-    "Header": null,
-    "Footer": null,
-    "Code": "!v\"Hello, World!\"r!\n >l?!;o",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["fish"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "!v\"Hello, World!\"r!\n >l?!;o" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

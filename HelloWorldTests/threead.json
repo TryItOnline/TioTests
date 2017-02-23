@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "threead",
-    "Header": null,
-    "Footer": null,
-    "Code": "\"Hello, World!\"o",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["threead"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"o" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

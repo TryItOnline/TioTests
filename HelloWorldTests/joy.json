@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "joy",
-    "Header": null,
-    "Footer": null,
-    "Code": "stdout \"Hello, World!\" fputstring pop.\nquit",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["joy"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "stdout \"Hello, World!\" fputstring pop.\nquit" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

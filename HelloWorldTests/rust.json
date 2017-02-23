@@ -1,13 +1,10 @@
 {
-  "Input": {
-    "Language": "rust",
-    "Header": null,
-    "Footer": null,
-    "Code": "fn main(){println!(\"Hello, World!\");}",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["rust"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "fn main(){println!(\"Hello, World!\");}" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }
-
-

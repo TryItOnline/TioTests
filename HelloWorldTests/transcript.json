@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "transcript",
-    "Header": null,
-    "Footer": null,
-    "Code": "He is here.\n>HE, Hello, World!\n>X HE",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["transcript"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "He is here.\n>HE, Hello, World!\n>X HE" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "delimit",
-    "Header": null,
-    "Footer": null,
-    "Code": "=#:#Hello, World!#/##3#=#?#9#\"",
-    "Input": null,
-    "CommandLineArguments": ["#"]
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["delimit"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "=#:#Hello, World!#/##3#=#?#9#\"" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": ["#"] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

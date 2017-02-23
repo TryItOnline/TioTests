@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "maverick",
-    "Header": null,
-    "Footer": null,
-    "Code": "outc(32+40`69`76`76`79`12`0`55`79`82`76`68`1)",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["maverick"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "outc(32+40`69`76`76`79`12`0`55`79`82`76`68`1)" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

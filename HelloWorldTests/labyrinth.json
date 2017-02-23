@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "labyrinth",
-    "Header": null,
-    "Footer": null,
-    "Code": "72.10:1.:8:..:):1:.#2#4..:1..4.:8.0.33.@",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["labyrinth"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "72.10:1.:8:..:):1:.#2#4..:1..4.:8.0.33.@" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

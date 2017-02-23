@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "fs-mono",
-    "Header": null,
-    "Footer": null,
-    "Code": "printfn \"Hello, World!\"",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["fs-mono"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "printfn \"Hello, World!\"" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

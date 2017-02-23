@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "emacs-lisp",
-    "Header": null,
-    "Footer": null,
-    "Code": "(princ \"Hello, World!\")",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["emacs-lisp"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "(princ \"Hello, World!\")" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

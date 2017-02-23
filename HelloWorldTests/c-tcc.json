@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "c-tcc",
-    "Header": null,
-    "Footer": null,
-    "Code": "main(){puts(\"Hello, World!\");}",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["c-tcc"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "main(){puts(\"Hello, World!\");}" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

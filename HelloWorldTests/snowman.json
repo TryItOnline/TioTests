@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "snowman",
-    "Header": null,
-    "Footer": null,
-    "Code": "(\"Hello, World!\"sP",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["snowman"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "(\"Hello, World!\"sP" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

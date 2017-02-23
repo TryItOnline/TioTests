@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "shtriped",
-    "Header": null,
-    "Footer": null,
-    "Code": "e n\ne b\ni b\n+ x y\n +\n  i x\n  d y\n  +\n +\n d x\n0\n + b b b\n1\n + b n n\n 0\n1\n0\n1\n0\n1\n1\n0\n0\n0\n1\n0\n0\n1\ns n",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["shtriped"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "e n\ne b\ni b\n+ x y\n +\n  i x\n  d y\n  +\n +\n d x\n0\n + b b b\n1\n + b n n\n 0\n1\n0\n1\n0\n1\n1\n0\n0\n0\n1\n0\n0\n1\ns n" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "HW"
 }

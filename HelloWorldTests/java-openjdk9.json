@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "java-openjdk9",
-    "Header": null,
-    "Footer": null,
-    "Code": "class HelloWorld {public static void main(String[] args) {System.out.println(\"Hello, World!\");}}",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["java-openjdk9"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "class HelloWorld {public static void main(String[] args) {System.out.println(\"Hello, World!\");}}" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

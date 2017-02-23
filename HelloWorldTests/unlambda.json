@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "unlambda",
-    "Header": null,
-    "Footer": null,
-    "Code": "`.!`.d`.l`.r``.W`. `.,``.l`c`.H.e.oi",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["unlambda"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "`.!`.d`.l`.r``.W`. `.,``.l`c`.H.e.oi" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

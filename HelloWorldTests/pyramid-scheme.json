@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "pyramid-scheme",
-    "Header": null,
-    "Footer": null,
-    "Code": "        ^      ^     ^     ^\n       / \\    / \\   / \\   / \\\n      /out\\  /out\\ /out\\ /out\\\n     ^-----^ -----^----- -----^\n    / \\   / \\    / \\         / \\\n   /chr\\ /chr\\  /chr\\       /chr\\\n  ^----- -----^ -----^     ^-----\n / \\         / \\    / \\   / \\\n/72 \\       /101\\  /108\\ /111\\\n-----       -----  ----- -----",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["pyramid-scheme"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "        ^      ^     ^     ^\n       / \\    / \\   / \\   / \\\n      /out\\  /out\\ /out\\ /out\\\n     ^-----^ -----^----- -----^\n    / \\   / \\    / \\         / \\\n   /chr\\ /chr\\  /chr\\       /chr\\\n  ^----- -----^ -----^     ^-----\n / \\         / \\    / \\   / \\\n/72 \\       /101\\  /108\\ /111\\\n-----       -----  ----- -----" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello"
 }

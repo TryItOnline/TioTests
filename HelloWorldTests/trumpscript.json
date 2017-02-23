@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "trumpscript",
-    "Header": null,
-    "Footer": null,
-    "Code": "say \" Hello, World!\"\nAmerica is great.",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["trumpscript"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "say \" Hello, World!\"\nAmerica is great." } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "hello, world!"
 }

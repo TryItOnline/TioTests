@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "factor",
-    "Header": null,
-    "Footer": null,
-    "Code": "USE: io \"Hello, World!\" print",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["factor"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "USE: io \"Hello, World!\" print" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

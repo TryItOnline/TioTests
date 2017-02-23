@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "forte",
-    "Header": null,
-    "Footer": null,
-    "Code": "102 PRINT \"Hello, World!\":END",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["forte"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "102 PRINT \"Hello, World!\":END" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

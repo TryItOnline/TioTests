@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "templates",
-    "Header": null,
-    "Footer": null,
-    "Code": "St<72,'e','l','l','o',44,32,87,'o',114,'l','d',33>",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["templates"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "St<72,'e','l','l','o',44,32,87,'o',114,'l','d',33>" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "assembly-gcc",
-    "Header": null,
-    "Footer": null,
-    "Code": "SYS_write = 4\nSTDOUT = 1\n.data\nhello:\n.string \"Hello, World!\"\n.globl main\nmain:\nmovl $SYS_write,%eax\nmovl $STDOUT,%ebx\nmovl $hello,%ecx\nmovl $13,%edx\nint $0x80\nret\n",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["assembly-gcc"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "SYS_write = 4\nSTDOUT = 1\n.data\nhello:\n.string \"Hello, World!\"\n.globl main\nmain:\nmovl $SYS_write,%eax\nmovl $STDOUT,%ebx\nmovl $hello,%ecx\nmovl $13,%edx\nint $0x80\nret\n" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "glypho",
-    "Header": null,
-    "Footer": null,
-    "Code": "aabcabababbaabababbcabababababbcabbcabbb",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["glypho"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "aabcabababbaabababbcabababababbcabbcabbb" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "@"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "brian-chuck",
-    "Header": null,
-    "Footer": null,
-    "Code": "_#Jgnnq.\"Yqtnf#_{?\n#{<{>-?>--.>?",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["brian-chuck"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "_#Jgnnq.\"Yqtnf#_{?\n#{<{>-?>--.>?" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

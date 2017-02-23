@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "malbolge",
-    "Header": null,
-    "Footer": null,
-    "Code": "('&%:9]!~}|z2Vxwv-,POqponl$Hjihf|B@@>,=<M:9&7Y#VV2TSn.Oe*c;(I&%$#\"mCBA?zxxv*Pb8`qo42mZF.{Iy*@dD'<;_?!\\}}|z2VxSSQ",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["malbolge"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "('&%:9]!~}|z2Vxwv-,POqponl$Hjihf|B@@>,=<M:9&7Y#VV2TSn.Oe*c;(I&%$#\"mCBA?zxxv*Pb8`qo42mZF.{Iy*@dD'<;_?!\\}}|z2VxSSQ" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

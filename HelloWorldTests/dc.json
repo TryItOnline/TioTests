@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "dc",
-    "Header": null,
-    "Footer": null,
-    "Code": "[Hello, World!]P",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["dc"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "[Hello, World!]P" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

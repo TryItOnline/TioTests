@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "cinnamon-gum",
-    "Header": null,
-    "Footer": null,
-    "Code": "00000000: 2201 1d92 93bd 33f1 a12f 2a4e 940b 32    \".....3../*N..2",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["cinnamon-gum"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "00000000: 2201 1d92 93bd 33f1 a12f 2a4e 940b 32    \".....3../*N..2" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

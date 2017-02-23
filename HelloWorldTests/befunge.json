@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "befunge",
-    "Header": null,
-    "Footer": null,
-    "Code": " >25*\"!dlroW ,olleH\":v\n                  v:,_@\n                  >  ^",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["befunge"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": " >25*\"!dlroW ,olleH\":v\n                  v:,_@\n                  >  ^" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

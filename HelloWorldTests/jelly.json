@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "jelly",
-    "Header": null,
-    "Footer": null,
-    "Code": "“3ḅaė;œ»",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["jelly"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "“3ḅaė;œ»" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "taxi",
-    "Header": null,
-    "Footer": null,
-    "Code": "\"Hello, World!\" is waiting at the Writer's Depot.\nGo to Writer's Depot: west 1st left, 2nd right, 1st left, 2nd left.\nPickup a passenger going to the Post Office.\nGo to the Post Office: north 1st right, 2nd right, 1st left.\nGo to the Taxi Garage: north 1st right, 1st left, 1st right.",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["taxi"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\" is waiting at the Writer's Depot.\nGo to Writer's Depot: west 1st left, 2nd right, 1st left, 2nd left.\nPickup a passenger going to the Post Office.\nGo to the Post Office: north 1st right, 2nd right, 1st left.\nGo to the Taxi Garage: north 1st right, 1st left, 1st right." } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "aubergine",
-    "Header": null,
-    "Footer": null,
-    "Code": "=aA-a1=oA=bi+b1-Ab-bb:bA+B1=iBGolf by Quintopia\n!dlroW ,olleH",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["aubergine"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "=aA-a1=oA=bi+b1-Ab-bb:bA+B1=iBGolf by Quintopia\n!dlroW ,olleH" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

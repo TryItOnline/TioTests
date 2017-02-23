@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "minimal-2d",
-    "Header": null,
-    "Footer": null,
-    "Code": ">++  R<+++D R >++++++>+++++++++>++++++++++D\nD++>R/ </ +/U/-<<<<<<+++++++++++>+++>++++>L\n+   UU/->+LD    .++++++++++>.--------.----L\nR+++.>++.>--..+++.>.>-.>--.--------.+++.--U",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["minimal-2d"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": ">++  R<+++D R >++++++>+++++++++>++++++++++D\nD++>R/ </ +/U/-<<<<<<+++++++++++>+++>++++>L\n+   UU/->+LD    .++++++++++>.--------.----L\nR+++.>++.>--..+++.>.>-.>--.--------.+++.--U" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, world"
 }

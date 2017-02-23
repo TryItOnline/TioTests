@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "sqlite",
-    "Header": null,
-    "Footer": null,
-    "Code": "select 'Hello, World!';",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["sqlite"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "select 'Hello, World!';" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

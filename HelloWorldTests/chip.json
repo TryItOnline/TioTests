@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "chip",
-    "Header": null,
-    "Footer": null,
-    "Code": "*s\n`ZvZvZvZvZvZvZvZvZvZvt\nh-/-/-/-/-/-/-/-/-/-/-\ng÷/-/-/-/-/÷/÷/-/-/-/-\nf÷/-/-/-/-/-/-/-/-/-/-\ne-/-/-/-/-/-/÷/÷/÷/÷/-\nd÷/÷/÷/-/-/÷/-/÷/÷/÷/÷\nc-/÷/-/-/-/÷/÷/-/÷/÷/-\nb-/-/-/-/÷/÷/÷/-/-/÷/-\na-/÷/÷/-/÷/÷/÷/-/÷/-/-",
-    "Input": null,
-    "CommandLineArguments": ["-w"]
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["chip"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "*s\n`ZvZvZvZvZvZvZvZvZvZvt\nh-/-/-/-/-/-/-/-/-/-/-\ng÷/-/-/-/-/÷/÷/-/-/-/-\nf÷/-/-/-/-/-/-/-/-/-/-\ne-/-/-/-/-/-/÷/÷/÷/÷/-\nd÷/÷/÷/-/-/÷/-/÷/÷/÷/÷\nc-/÷/-/-/-/÷/÷/-/÷/÷/-\nb-/-/-/-/÷/÷/÷/-/-/÷/-\na-/÷/÷/-/÷/÷/÷/-/÷/-/-" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": ["-w"] } },
+      { "Command" : "R" }
+  ],
   "Output": "hello world"
 }

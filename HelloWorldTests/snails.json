@@ -1,11 +1,15 @@
 {
-  "Input": {
-    "Language": "snails",
-    "Header": null,
-    "Footer": null,
-    "Code": "\\p|\\P)z(\\a|\\A)z{\\n|\\N)z{\\a|\\A}z(\\m|\\M)z(\\a|\\A",
-    "Input": "EmYPhNuy\nAaaKVsjL\nonlGviCw\nDdOgFrRn\nISeHZmqc\nzMUkBGJQ",
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["snails"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "\\p|\\P)z(\\a|\\A)z{\\n|\\N)z{\\a|\\A}z(\\m|\\M)z(\\a|\\A" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "EmYPhNuy
+AaaKVsjL
+onlGviCw
+DdOgFrRn
+ISeHZmqc
+zMUkBGJQ" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "1"
 }

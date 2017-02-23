@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "gs2",
-    "Header": null,
-    "Footer": null,
-    "Code": "↕h",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["gs2"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "↕h" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

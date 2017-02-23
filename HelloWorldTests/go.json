@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "go",
-    "Header": null,
-    "Footer": null,
-    "Code": "package main\nimport \"fmt\"\nfunc main() {fmt.Printf(\"Hello, World!\")}",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["go"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "package main\nimport \"fmt\"\nfunc main() {fmt.Printf(\"Hello, World!\")}" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "k-ok",
-    "Header": null,
-    "Footer": null,
-    "Code": "{}`0:\"Hello, World!\"",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["k-ok"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "{}`0:\"Hello, World!\"" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "visual-basic-net-mono",
-    "Header": null,
-    "Footer": null,
-    "Code": "Module Hello\nSub Main()\nConsole.WriteLine(\"Hello, World!\")\nEnd Sub\nEnd Module",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["visual-basic-net-mono"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "Module Hello\nSub Main()\nConsole.WriteLine(\"Hello, World!\")\nEnd Sub\nEnd Module" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

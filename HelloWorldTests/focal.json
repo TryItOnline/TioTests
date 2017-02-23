@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "focal",
-    "Header": null,
-    "Footer": null,
-    "Code": "10.10 t \"Hello, World!\"\ng",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["focal"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "10.10 t \"Hello, World!\"\ng" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }

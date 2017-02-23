@@ -1,11 +1,10 @@
 {
-  "Input": {
-    "Language": "erlang-escript",
-    "Header": null,
-    "Footer": null,
-    "Code": "\nmain([])->\nio:fwrite(\"Hello, World!\").",
-    "Input": null,
-    "CommandLineArguments": null
-  },
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["erlang-escript"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "\nmain([])->\nio:fwrite(\"Hello, World!\")." } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
   "Output": "Hello, World!"
 }
