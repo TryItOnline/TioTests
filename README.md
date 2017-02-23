@@ -10,3 +10,5 @@ An attempt to build a tool that runs test suits on [TryItOnline!](https://tryito
     4. `dotnet restore`
     5. Edit `config.json` if required
     6. `dotnet run`
+
+If you are running it's on Windows, it's recommended to start it from powershell, as Windows Console does not support ANSI sequences and you'll see weird output.

@@ -2,7 +2,6 @@
 using System.IO;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -63,8 +62,7 @@ namespace TioTests
 
         private static void CheckPath(string checkUrl, string testFolder, bool useConsoleCodes)
         {
-            HttpClient client = new HttpClient();
-            client.Timeout = TimeSpan.FromSeconds(30);
+            HttpClient client = new HttpClient {Timeout = TimeSpan.FromSeconds(30)};
 
             string s;
             try
@@ -89,14 +87,14 @@ namespace TioTests
                 .ToList();    
             
             var listFromFolder = Directory.GetFiles(testFolder, "*.json")
-                .Select(x => Path.GetFileNameWithoutExtension(x))
+                .Select(Path.GetFileNameWithoutExtension)
                 .OrderBy(x=>x)
                 .ToList();
 
             var missing = listFromUrl.Except(listFromFolder).ToList();
             var extra = listFromFolder.Except(listFromUrl).ToList();
 
-            Logger.LogLine($"Checking for missing tests...");
+            Logger.LogLine("Checking for missing tests...");
             Logger.LogLine($"Missing languages: {missing.Count}");
             foreach (string language in missing)
             {

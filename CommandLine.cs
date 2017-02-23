@@ -87,11 +87,11 @@ namespace TioTests
                 {
                     bool? val = null;
                     SetBooleanOption(checkMissing, cla, b => val = b);
-                    config.CheckUrl = val.HasValue && !val.Value ? null : checkMissing.Value();
+                    config.CheckUrl = val != null && !val.Value ? null : checkMissing.Value();
                 }
                 if (retry.HasValue())
                 {
-                    int retries = 0;
+                    int retries;
                     if (int.TryParse(retry.Value(), out retries))
                     {
                         config.Retries = retries;    

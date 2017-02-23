@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace ConsoleApplication
+namespace TioTests
 {
     public static class MemoryStreamExtensions
     {

@@ -56,7 +56,7 @@ namespace TioTests
             if (config.UseConsoleCodes)
             {
                 //Logger.Log($"\r{string.Empty.PadLeft(name.Length + 23)}\r", true);
-                Logger.Log($"\r", true);
+                Logger.Log("\r", true);
             }
             if (test.Output == result.Output)
             {
