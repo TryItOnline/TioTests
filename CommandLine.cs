@@ -56,6 +56,48 @@ namespace TioTests
                 CommandOptionType.SingleValue
             );
 
+            CommandOption localRun = cla.Option(
+                "-l | --local-run",
+                "Instead of running the command against http url supplied with -u run against local backend. Pass on to switch on. Pass path to local backend with -p. Pass ArenaHost with -z.",
+                CommandOptionType.SingleValue
+            );
+
+            CommandOption localRoot = cla.Option(
+                "-o | --local-root",
+                "Specifies the main server directory (/srv). Used in local run mode, if either or both -p and -z are not provided. See their respective descriptions",
+                CommandOptionType.SingleValue
+            );
+
+            CommandOption localProcess = cla.Option(
+                "-p | --local-process",
+                "Used in local run mode. Specifies the process path to run tests against. If not specified, will combine path provided by -o and 'backend.tryitonline.net/run'",
+                CommandOptionType.SingleValue
+            );
+
+            CommandOption arenaHost = cla.Option(
+                "-z | --arena-host",
+                "Used in local run mode. Specifies the arena user and host to run tests against. If not specified, will use path provided by -o to look up the value in 'etc/run'",
+                CommandOptionType.SingleValue
+            );
+
+            CommandOption batch = cla.Option(
+                "-b | --batch-mode",
+                "Used in local run mode. Batch up all the tests in a single call. There will be no progress indicator when tests are run in this mode. Pass off to switch off.",
+                CommandOptionType.SingleValue
+            );
+
+            CommandOption quiet = cla.Option(
+                "-q | --quiet",
+                "Used in batch mode. Suppresses results of individual tests, only displaying summary. -f or -s override this for failed and successful test respectively. Pass on to switch on.",
+                CommandOptionType.SingleValue
+            );
+
+            CommandOption dump = cla.Option(
+                "-x | --debug-Dump",
+                "Append dumps of binary streams that are being sent and received to dump.log. Pass on to switch on.",
+                CommandOptionType.SingleValue
+            );
+
             cla.HelpOption("-? | -h | --help");
             cla.OnExecute(() =>
             {
@@ -96,6 +138,34 @@ namespace TioTests
                     {
                         config.Retries = retries;    
                     }
+                }
+                if (localRun.HasValue())
+                {
+                    SetBooleanOption(localRun, cla, b => config.LocalRun = b);
+                }
+                if (localRoot.HasValue())
+                {
+                    config.LocalRoot = url.Value();
+                }
+                if (localProcess.HasValue())
+                {
+                    config.LocalProcess = url.Value();
+                }
+                if (arenaHost.HasValue())
+                {
+                    config.ArenaHost = url.Value();
+                }
+                if (batch.HasValue())
+                {
+                    SetBooleanOption(batch, cla, b => config.BatchMode = b);
+                }
+                if (quiet.HasValue())
+                {
+                    SetBooleanOption(quiet, cla, b => config.Quiet = b);
+                }
+                if (dump.HasValue())
+                {
+                    SetBooleanOption(dump, cla, b => config.DebugDump = b);
                 }
                 return 0;
             });

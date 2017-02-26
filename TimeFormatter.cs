@@ -4,40 +4,23 @@ namespace TioTests
 {
     public static class TimeFormatter
     {
-        private static readonly TimeSpan MinimumIntervalDeemedOneDay = TimeSpan.FromHours(23);
-        private static readonly TimeSpan MinimumIntervalDeemedOneHour = TimeSpan.FromMinutes(59);
-        private static readonly TimeSpan MinimumIntervalDeemedOneMinute = TimeSpan.FromSeconds(59);
-        private static readonly TimeSpan MinimumIntervalDeemedOneSecond = TimeSpan.FromMilliseconds(999);
-
-        public static string LargestIntervalWithUnits(TimeSpan interval)
+        public static string FormatTime(TimeSpan interval)
         {
-            if (interval > MinimumIntervalDeemedOneDay)
+            if (interval < TimeSpan.FromSeconds(1))
             {
-                return FormatTime(interval.TotalDays, "d");
+                return $"{FormatTime(interval.TotalMilliseconds)}ms";
             }
-
-            if (interval > MinimumIntervalDeemedOneHour)
+            if (interval < TimeSpan.FromMinutes(1))
             {
-                return FormatTime(interval.TotalHours, "hr");
+                return $"{FormatTime(interval.TotalSeconds)}s";
             }
-
-            if (interval > MinimumIntervalDeemedOneMinute)
-            {
-                return FormatTime(interval.TotalMinutes, "min");
-            }
-
-            if (interval > MinimumIntervalDeemedOneSecond)
-            {
-                return FormatTime(interval.TotalSeconds, "sec");
-            }
-
-            return FormatTime(interval.TotalMilliseconds, "ms");
+            return $"{FormatTime(interval.TotalMinutes)}m{FormatTime(interval.Seconds)}s";
         }
 
-        private static string FormatTime(double value, string units)
+        private static string FormatTime(double value)
         {
-            var ceiling = (int)Math.Ceiling(value);
-            return string.Format($"{ceiling:#,##0} {units}");
+            var ceiling = (int)Math.Floor(value);
+            return string.Format($"{ceiling:#,##0}");
         }
     }
 }

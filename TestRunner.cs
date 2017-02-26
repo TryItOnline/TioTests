@@ -11,123 +11,228 @@ namespace TioTests
 {
     public class TestRunner
     {
-        public static void RunTest(string file, Config config, string counter)
+        public static void RunTestsBatchLocal(string[] files, Config config)
         {
-            var name = file.EndsWith(".json") ? file.Substring(0, file.Length - ".json".Length) : file;
-            name = Path.GetFileName(name);
-            if (config.UseConsoleCodes) Logger.Log($"{counter} {name}...");
+            List<string> expectedOutput;
+            byte[] payload = PrepareBatch(files, config.DebugDump, out expectedOutput);
+
+            int numberOfTests = files.Length;
+
+            Logger.LogLine($"Running a batch of {numberOfTests} tests");
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            RunResult result = ExecuteLocal(payload, Utility.GetProcess(config), Utility.GetArenaHost(config), numberOfTests * 50, numberOfTests * 50 + 5, config.DebugDump);
+            sw.Stop();
+            string time = TimeFormatter.FormatTime(sw.Elapsed);
+
+            if (numberOfTests != result.Output.Count || result.Output.Count != result.Debug.Count)
+            {
+                Logger.LogLine($"Error: Unexpected response. Tests:{numberOfTests}, Output:{result.Output.Count}, Debug: {result.Output.Count}");
+                return;
+            }
+
+            // In the batch mode backed returns a single set of warnings for all the tests. Display them here
+            if (config.DisplayDebugInfoOnSuccess)
+            {
+                if (result.Warnings != null)
+                {
+                    foreach (string warning in result.Warnings)
+                    {
+                        Logger.LogLine($"Warning: {warning}");
+                    }
+                }
+            }
+
+            int successes = 0;
+            for (int i = 0; i < numberOfTests; i++)
+            {
+                DisplayTestResultParams p = new DisplayTestResultParams
+                {
+                    TestName = GetTestName(files[i]),
+                    ExpectedOutput = expectedOutput[i],
+                    Output = config.TrimWhitespacesFromResults ? Utility.TrimWhitespaces(result.Output[i]) : result.Output[i],
+                    Debug = result.Debug[i]
+                };
+                DisplayTestResult(p, config);
+                if (p.Success)
+                {
+                    successes++;
+                }
+            }
+            Logger.LogLine($"Elapsed: {time}");
+            Logger.LogLine($"Result: {successes} succeeded, {numberOfTests - successes} failed");
+        }
+
+        private static byte[] PrepareBatch(string[] files, bool dump, out List<string> expectedOutput)
+        {
+            // Parse files with test definitions, prepare request to run the test and collect 
+            // expected test results
+            byte[] payload;
+            expectedOutput = new List<string>();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                foreach (string file in files)
+                {
+                    TestDescription test = JsonConvert.DeserializeObject<TestDescription>(Encoding.UTF8.GetString(File.ReadAllBytes(file)));
+                    ms.Write(test.GetInputBytes());
+                    expectedOutput.Add(test.Output);
+                }
+                payload = CompressAndDump(ms.ToArray(), dump, "Local");
+            }
+            return payload;
+        }
+
+        public static bool RunSingleTest(string file, Config config, string counter)
+        {
+            string testName = GetTestName(file);
+            if (config.UseConsoleCodes) Logger.Log($"{counter} {testName}...");
+
             TestDescription test = JsonConvert.DeserializeObject<TestDescription>(Encoding.UTF8.GetString(File.ReadAllBytes(file)));
-            
+
             RunResult result;
             string time;
             int retried = 0;
-            while(true)
+            
+            // This is the retry loop for flaky HTTP connection. Note that local runs are never over HTTP, so they are never retried 
+            while (true)
             {
+                byte[] compressed = CompressAndDump(test.GetInputBytes(), config.DebugDump, config.LocalRun ? "Local" :"Remote");
+
                 Stopwatch sw = new Stopwatch();
                 sw.Start();
-                result = Execute(test.GetInputBytes(), config.RunUrl);
+                result = config.LocalRun
+                    ? ExecuteLocal(compressed, Utility.GetProcess(config), Utility.GetArenaHost(config), 60, 65, config.DebugDump)
+                    : ExecuteRemote(compressed, config.RunUrl, config.DebugDump);
                 sw.Stop();
-                time = TimeFormatter.LargestIntervalWithUnits(sw.Elapsed);
+
+                time = TimeFormatter.FormatTime(sw.Elapsed);
                 if (!result.HttpFailure || retried++ >= config.Retries)
                 {
                     break;
                 }
                 if (config.UseConsoleCodes)
                 {
-                    //Logger.Log($"\r{string.Empty.PadLeft(name.Length + 40)}\r", true);
+                    Utility.ClearLine(testName);
                 }
-                if (config.UseConsoleCodes)  Console.ForegroundColor = ConsoleColor.Red;
+                if (config.UseConsoleCodes) Console.ForegroundColor = ConsoleColor.Red;
                 if (config.UseConsoleCodes)
                 {
-                    Logger.Log($"{name} - FAIL ({time}) Retrying({retried})...\x1b[K" );
+                    Logger.Log($"{testName} - FAIL ({time}) Retrying({retried})...");
 
                 }
                 else
                 {
-                    Logger.LogLine($"{counter} {name} - FAIL ({time}) Retrying({retried})...");
+                    Logger.LogLine($"{counter} {testName} - FAIL ({time}) Retrying({retried})...");
                 }
-                if (config.UseConsoleCodes)  Console.ResetColor();
+                if (config.UseConsoleCodes) Console.ResetColor();
             }
 
-            if (config.TrimWhitespacesFromResults)
-            {
-                result.Output = result.Output?.Trim("\n\r\t ".ToCharArray());
-            }
             if (config.UseConsoleCodes)
             {
-                //Logger.Log($"\r{string.Empty.PadLeft(name.Length + 23)}\r", true);
-                Logger.Log("\r", true);
+                Utility.ClearLine(testName);
             }
-            if (test.Output == result.Output)
+
+            DisplayTestResultParams p = new DisplayTestResultParams
             {
-                if (config.UseConsoleCodes) Console.ForegroundColor = ConsoleColor.Green;
-                Logger.LogLine(config.UseConsoleCodes ? $"{name} - PASS ({time})\x1b[K" : $"{counter} {name} - PASS ({time})");
-                if (config.UseConsoleCodes)  Console.ResetColor();
-                if (config.DisplayDebugInfoOnSuccess)
+                TestName = testName,
+                ExpectedOutput = test.Output,
+                Output = config.TrimWhitespacesFromResults ? Utility.TrimWhitespaces(result.Output[0]) : result.Output[0],
+                Debug = result.Debug[0],
+                Time = time,
+                Counter = counter,
+                Warnings = result.Warnings
+            };
+            DisplayTestResult(p, config);
+            return p.Success;
+        }
+
+        private static string GetTestName(string file)
+        {
+            var name = file.EndsWith(".json") ? file.Substring(0, file.Length - ".json".Length) : file;
+            name = Path.GetFileName(name);
+            return name;
+        }
+
+        private static void DisplayTestResult(DisplayTestResultParams p, Config config)
+        {
+            if (config.UseConsoleCodes) Console.ForegroundColor = p.Color;
+            if (!config.BatchMode) Logger.LogLine(config.UseConsoleCodes ? $"{p.TestName} - {p.Result} ({p.Time})" : $"{p.Counter} {p.TestName} - {p.Result} ({p.Time})");
+            if (config.BatchMode && (!config.Quiet || config.DisplayDebugInfoOnError)) Logger.LogLine($"{p.TestName} - {p.Result}");
+            if (config.UseConsoleCodes) Console.ResetColor();
+            if (p.Success ? config.DisplayDebugInfoOnSuccess : config.DisplayDebugInfoOnError)
+            {
+                if (!p.Success)
                 {
-                    if (result.Warnings != null)
+                    Logger.LogLine($"Expected: {p.ExpectedOutput}");
+                    Logger.LogLine($"Got: {p.Output}");
+                }
+                if (!config.BatchMode && p.Warnings != null)
+                {
+                    foreach (string warning in p.Warnings)
                     {
-                        foreach (string warning in result.Warnings)
-                        {
-                            Logger.LogLine($"Warning: {warning}");
-                        }
-                    }
-                    if (!string.IsNullOrWhiteSpace(result.Debug))
-                    {
-                        Logger.LogLine($"Debug {result.Debug}");
+                        Logger.LogLine($"Warning: {warning}");
                     }
                 }
-            }
-            else
-            {
-                if (config.UseConsoleCodes)  Console.ForegroundColor = ConsoleColor.Red;
-                Logger.LogLine(config.UseConsoleCodes ? $"{name} - FAIL ({time})\x1b[K" : $"{counter} {name} - FAIL ({time})");
-                if (config.UseConsoleCodes)  Console.ResetColor();
-                if (config.DisplayDebugInfoOnError)
+                if (!string.IsNullOrWhiteSpace(p.Debug))
                 {
-                    Logger.LogLine($"Expected: {test.Output}");
-                    Logger.LogLine($"Got: {result.Output}");
-                    if (result.Warnings != null)
-                    {
-                        foreach (string warning in result.Warnings)
-                        {
-                            Logger.LogLine($"Warning: {warning}");
-                        }
-                    }
-                    if (!string.IsNullOrWhiteSpace(result.Debug))
-                    {
-                        Logger.LogLine($"Debug {result.Debug}");
-                    }
+                    Logger.LogLine($"Debug {p.Debug}");
                 }
             }
         }
 
+        private static RunResult ExecuteLocal(byte[] test, string process, string arenaHost, int softTimeOut, int hardTimeOut, bool dump)
+        {
+            ProcessStartInfo si = new ProcessStartInfo(process)
+            {
+                RedirectStandardError = true,
+                RedirectStandardInput = true,
+                RedirectStandardOutput = true,
+                UseShellExecute = false
+            };
 
-        //private static void Decode(byte[] toDecompress)
-        //{
-        //    byte[] header = {0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x03};
+            si.Environment["PATH_INFO"] = "/api/no-cache/";
+            si.Environment["REQUEST_METHOD"] = "POST";
+            si.Environment["SSH_USER_HOST"] = arenaHost;
+            si.Environment["TIMEOUT_HARD"] = hardTimeOut.ToString();
+            si.Environment["TIMEOUT_SOFT"] = softTimeOut.ToString();
+            Process p = new Process { StartInfo = si };
+            p.Start();
+            p.StandardInput.BaseStream.Write(test);
+            p.StandardInput.Dispose();
+            byte[] result;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                while (true)
+                {
+                    int i = p.StandardOutput.BaseStream.ReadByte();
+                    if (i == -1) break;
+                    ms.WriteByte((byte)i);
+                }
+                result = ms.ToArray();
+            }
 
-        //    byte[] n = new byte[toDecompress.Length + header.Length];
-        //    Array.Copy(header, 0, n, 0, header.Length);
-        //    Array.Copy(toDecompress, 0, n, header.Length, toDecompress.Length);
+            if (dump) Utility.Dump("Local raw response",result);
 
-        //    using (MemoryStream compressed = new MemoryStream(n))
-        //    using (GZipStream compressor = new GZipStream(compressed, CompressionMode.Decompress))
-        //    {
-        //        MemoryStream res = new MemoryStream();
-        //        byte[] buffer = new byte[1024];
-        //        int nRead;
-        //        while ((nRead = compressor.Read(buffer, 0, buffer.Length)) > 0)
-        //        {
-        //            res.Write(buffer, 0, nRead);
-        //        }
-        //        res.Flush();
-        //        string s = Encoding.UTF8.GetString(res.ToArray());
-        //        s.ToString();
-        //    }
-        //}
+            byte[] endOfHeaders = {0x0A, 0x0A};
+            int offset = Utility.SearchBytes(result, endOfHeaders);
 
-        private static RunResult Execute(byte[] test, string configRunUrl)
+            if (offset < 0)
+            {
+                return new RunResult
+                {
+                    Warnings = new List<string> { $"Can't parse response from {process}", $"{Encoding.UTF8.GetString(result)}" }
+                };
+            }
+
+            offset += endOfHeaders.Length;
+            byte[] raw = new byte[result.Length - offset];
+            Array.Copy(result, offset, raw, 0, raw.Length);
+            byte[] decoded = Compression.Decompress(raw);
+            if (dump) Utility.Dump("Local decoded response", decoded);
+            return ResponseToRunResult(decoded);
+        }
+
+        private static RunResult ExecuteRemote(byte[] test, string configRunUrl, bool dump)
         {
             HttpClient client = new HttpClient
             {
@@ -135,20 +240,36 @@ namespace TioTests
                 Timeout = TimeSpan.FromSeconds(30)
             };
             HttpContent z = new ByteArrayContent(test);
-            string s;
+            byte[] b;
             try
             {
                 HttpResponseMessage response = client.PostAsync(configRunUrl, z).Result;
-                s = response.Content.ReadAsStringAsync().Result;
+               b = response.Content.ReadAsByteArrayAsync().Result;
             }
             catch (AggregateException ex)
             {
                 return new RunResult
                 {
-                    Warnings = new List<string> { $"Can't connect to [{configRunUrl}]",$"{ex}" },
+                    Warnings = new List<string> {$"Can't connect to [{configRunUrl}]", $"{ex}"},
                     HttpFailure = true
                 };
             }
+            if (dump) Utility.Dump("Remote response", b);
+
+            return ResponseToRunResult(b);
+        }
+
+        private static byte[] CompressAndDump(byte[] data, bool dump, string marker)
+        {
+            if (dump) Utility.Dump($"{marker} request raw", data);
+            byte[] payload = Compression.Compress(data);
+            if (dump) Utility.Dump($"{marker} request compressed", payload);
+            return payload;
+        }
+
+        private static RunResult ResponseToRunResult(byte[] response)
+        {
+            string s = Encoding.UTF8.GetString(response);
             if (s.Length < 16)
             {
                 return new RunResult
@@ -159,7 +280,7 @@ namespace TioTests
             string separator = s.Substring(0, 16);
             s = s.Substring(16);
             string[] tokens = s.Split(new[] { separator }, StringSplitOptions.None);
-            if (tokens.Length != 3)
+            if (tokens.Length < 3 || tokens.Length % 2 != 1)
             {
                 return new RunResult
                 {
@@ -168,9 +289,9 @@ namespace TioTests
             }
             return new RunResult
             {
-                Warnings = tokens[2]?.Split('\n').Where(x => !string.IsNullOrWhiteSpace(x)).ToList(),
-                Output = tokens[0],
-                Debug = tokens[1]
+                Warnings = tokens[tokens.Length - 1]?.Split('\n').Where(x => !string.IsNullOrWhiteSpace(x)).ToList(),
+                Output = tokens.Take(tokens.Length / 2).ToList(),
+                Debug = tokens.Skip(tokens.Length / 2).Take(tokens.Length / 2).ToList()
             };
         }
     }

@@ -8,7 +8,8 @@
     "System.Net.Http": "*",
     "System.IO.Compression": "*",
     "Newtonsoft.Json": "*",
-    "Microsoft.Extensions.CommandLineUtils" :  "*"
+    "Microsoft.Extensions.CommandLineUtils": "*",
+    "System.Text.Encoding.CodePages" : "*" 
   },
   "frameworks": {
     "netcoreapp1.0": {

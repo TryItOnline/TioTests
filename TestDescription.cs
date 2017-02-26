@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.Compression;
-using System.Linq;
 using System.Text;
 using Newtonsoft.Json.Linq;
 
@@ -61,16 +59,8 @@ namespace TioTests
                         }
                     }
                 }
-                byte[] toCompress = ms.ToArray();
-                using (MemoryStream compressed = new MemoryStream())
-                using (GZipStream compressor = new GZipStream(compressed, CompressionLevel.Optimal, false))
-                {
-                    compressor.Write(toCompress, 0, toCompress.Length);
-                    compressor.Flush();
-                    return compressed.ToArray().Skip(10).ToArray();
-                }
+                return ms.ToArray();
             }
-
         }
     }
 }   

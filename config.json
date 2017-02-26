@@ -6,5 +6,8 @@
   "DisplayDebugInfoOnSuccess": false,
   "UseConsoleCodes": true,
   "CheckUrl": "https://tryitonline.net/languages.json",
-  "Retries": 3
+  "Retries": 3,
+  "LocalRun" : false,
+  "LocalRoot" : "/srv",
+  "BatchMode" : true
 }
