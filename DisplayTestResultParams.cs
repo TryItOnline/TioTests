@@ -20,7 +20,7 @@ namespace TioTests
         // Finally, Warnings on local run apply to the whole run not to individual test
         public string Time { set; get; }
         public string Counter { set; get; }
-        public IList<string> Warnings { set; get; }
+        public List<string> Warnings { set; get; }
 
     }
 }

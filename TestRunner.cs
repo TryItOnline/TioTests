@@ -25,22 +25,17 @@ namespace TioTests
             sw.Stop();
             string time = TimeFormatter.FormatTime(sw.Elapsed);
 
-            if (numberOfTests != result.Output.Count || result.Output.Count != result.Debug.Count)
+            if (numberOfTests != result.Output?.Count || result.Output?.Count != result.Debug?.Count)
             {
-                Logger.LogLine($"Error: Unexpected response. Tests:{numberOfTests}, Output:{result.Output.Count}, Debug: {result.Output.Count}");
+                Logger.LogLine($"Error: Unexpected response. Tests:{numberOfTests}, Output:{result.Output?.Count}, Debug: {result.Debug?.Count}");
+                ShowWarnings(result.Warnings);
                 return;
             }
 
             // In the batch mode backed returns a single set of warnings for all the tests. Display them here
             if (config.DisplayDebugInfoOnSuccess)
             {
-                if (result.Warnings != null)
-                {
-                    foreach (string warning in result.Warnings)
-                    {
-                        Logger.LogLine($"Warning: {warning}");
-                    }
-                }
+                ShowWarnings(result.Warnings);
             }
 
             int successes = 0;
@@ -61,6 +56,17 @@ namespace TioTests
             }
             Logger.LogLine($"Elapsed: {time}");
             Logger.LogLine($"Result: {successes} succeeded, {numberOfTests - successes} failed");
+        }
+
+        private static void ShowWarnings(List<string> warnings)
+        {
+            if (warnings != null)
+            {
+                foreach (string warning in warnings)
+                {
+                    Logger.LogLine($"Warning: {warning}");
+                }
+            }
         }
 
         private static byte[] PrepareBatch(string[] files, bool dump, out List<string> expectedOutput)
@@ -92,11 +98,11 @@ namespace TioTests
             RunResult result;
             string time;
             int retried = 0;
-            
+
             // This is the retry loop for flaky HTTP connection. Note that local runs are never over HTTP, so they are never retried 
             while (true)
             {
-                byte[] compressed = CompressAndDump(test.GetInputBytes(), config.DebugDump, config.LocalRun ? "Local" :"Remote");
+                byte[] compressed = CompressAndDump(test.GetInputBytes(), config.DebugDump, config.LocalRun ? "Local" : "Remote");
 
                 Stopwatch sw = new Stopwatch();
                 sw.Start();
@@ -166,12 +172,9 @@ namespace TioTests
                     Logger.LogLine($"Expected: {p.ExpectedOutput}");
                     Logger.LogLine($"Got: {p.Output}");
                 }
-                if (!config.BatchMode && p.Warnings != null)
+                if (!config.BatchMode)
                 {
-                    foreach (string warning in p.Warnings)
-                    {
-                        Logger.LogLine($"Warning: {warning}");
-                    }
+                    ShowWarnings(p.Warnings);
                 }
                 if (!string.IsNullOrWhiteSpace(p.Debug))
                 {
@@ -211,9 +214,9 @@ namespace TioTests
                 result = ms.ToArray();
             }
 
-            if (dump) Utility.Dump("Local raw response",result);
+            if (dump) Utility.Dump("Local raw response", result);
 
-            byte[] endOfHeaders = {0x0A, 0x0A};
+            byte[] endOfHeaders = { 0x0A, 0x0A };
             int offset = Utility.SearchBytes(result, endOfHeaders);
 
             if (offset < 0)
@@ -244,13 +247,13 @@ namespace TioTests
             try
             {
                 HttpResponseMessage response = client.PostAsync(configRunUrl, z).Result;
-               b = response.Content.ReadAsByteArrayAsync().Result;
+                b = response.Content.ReadAsByteArrayAsync().Result;
             }
             catch (AggregateException ex)
             {
                 return new RunResult
                 {
-                    Warnings = new List<string> {$"Can't connect to [{configRunUrl}]", $"{ex}"},
+                    Warnings = new List<string> { $"Can't connect to [{configRunUrl}]", $"{ex}" },
                     HttpFailure = true
                 };
             }
