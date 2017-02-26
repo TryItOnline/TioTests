@@ -7,7 +7,11 @@
   "UseConsoleCodes": true,
   "CheckUrl": "https://tryitonline.net/languages.json",
   "Retries": 3,
-  "LocalRun" : false,
-  "LocalRoot" : "/srv",
-  "BatchMode" : true
+  "LocalRun": false,
+  "LocalRoot": "/srv",
+  "LocalProcess": null,
+  "ArenaHost": null,
+  "BatchMode": true,
+  "Quiet": false,
+  "DebugDump": false      
 }
