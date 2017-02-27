@@ -93,7 +93,7 @@ namespace TioTests
             );
 
             CommandOption dump = cla.Option(
-                "-x | --debug-Dump",
+                "-x | --debug-dump",
                 "Append dumps of binary streams that are being sent and received to dump.log. Pass on to switch on.",
                 CommandOptionType.SingleValue
             );
