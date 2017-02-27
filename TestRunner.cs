@@ -162,8 +162,8 @@ namespace TioTests
         private static void DisplayTestResult(DisplayTestResultParams p, Config config)
         {
             if (config.UseConsoleCodes) Console.ForegroundColor = p.Color;
-            if (!config.BatchMode) Logger.LogLine(config.UseConsoleCodes ? $"{p.TestName} - {p.Result} ({p.Time})" : $"{p.Counter} {p.TestName} - {p.Result} ({p.Time})");
-            if (config.BatchMode && (!config.Quiet || config.DisplayDebugInfoOnError)) Logger.LogLine($"{p.TestName} - {p.Result}");
+            if (!config.BatchModeEffective) Logger.LogLine(config.UseConsoleCodes ? $"{p.TestName} - {p.Result} ({p.Time})" : $"{p.Counter} {p.TestName} - {p.Result} ({p.Time})");
+            if (config.BatchModeEffective && (!config.Quiet || config.DisplayDebugInfoOnError)) Logger.LogLine($"{p.TestName} - {p.Result}");
             if (config.UseConsoleCodes) Console.ResetColor();
             if (p.Success ? config.DisplayDebugInfoOnSuccess : config.DisplayDebugInfoOnError)
             {
@@ -172,7 +172,7 @@ namespace TioTests
                     Logger.LogLine($"Expected: {p.ExpectedOutput}");
                     Logger.LogLine($"Got: {p.Output}");
                 }
-                if (!config.BatchMode)
+                if (!config.BatchModeEffective)
                 {
                     ShowWarnings(p.Warnings);
                 }

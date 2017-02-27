@@ -6,7 +6,7 @@ namespace TioTests
 {
     public class CommandLine
     {
-        public static void ApplyCommandLineArguments(string[] args, Config config)
+        public static bool ApplyCommandLineArguments(string[] args, Config config)
         {
             CommandLineApplication cla = new CommandLineApplication(false);
             CommandOption url = cla.Option(
@@ -167,17 +167,18 @@ namespace TioTests
                 {
                     SetBooleanOption(dump, cla, b => config.DebugDump = b);
                 }
-                return 0;
+                return 1;
             });
 
             try
             {
-                cla.Execute(args);
+                return cla.Execute(args) == 1;
             }
             catch (CommandParsingException ex)
             {
                 Logger.LogLine(ex.Message);
                 cla.ShowHelp();
+                return false;
             }
         }
 

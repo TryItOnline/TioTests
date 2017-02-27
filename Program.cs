@@ -36,7 +36,10 @@ namespace TioTests
                     LocalRoot = "/srv"                     
                 };
 
-            CommandLine.ApplyCommandLineArguments(args, config);
+            if (!CommandLine.ApplyCommandLineArguments(args, config))
+            {
+                return;
+            }
 
             if (Directory.Exists(config.Test))
             {
