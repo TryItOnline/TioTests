@@ -142,8 +142,8 @@ namespace TioTests
             {
                 TestName = testName,
                 ExpectedOutput = test.Output,
-                Output = config.TrimWhitespacesFromResults ? Utility.TrimWhitespaces(result.Output[0]) : result.Output[0],
-                Debug = result.Debug[0],
+                Output = config.TrimWhitespacesFromResults ? Utility.TrimWhitespaces(result?.Output?[0]) : result?.Output?[0],
+                Debug = result?.Debug?[0],
                 Time = time,
                 Counter = counter,
                 Warnings = result.Warnings

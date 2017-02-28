@@ -29,6 +29,9 @@ namespace TioTests
                 JsonConvert.DeserializeObject<Config>(File.ReadAllText(configPath)) :
                 new Config
                 {
+                    RunUrl = "https://backend.tryitonline.net/run/api/no-cache/",
+                    CheckUrl = "https://tryitonline.net/languages.json",
+                    Test = Path.Combine(Utility.GetAncestor(System.AppContext.BaseDirectory,3),"HelloWorldTests"),
                     TrimWhitespacesFromResults = true,
                     DisplayDebugInfoOnError = true,
                     UseConsoleCodes = true,

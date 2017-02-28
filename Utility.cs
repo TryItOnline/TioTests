@@ -5,6 +5,15 @@ namespace TioTests
 {
     public static class Utility
     {
+        public static string GetAncestor(string path, int depth)
+        {
+            string result = path;
+            for(int i=0;i<depth;i++)
+            {
+                result = Path.GetDirectoryName(result);
+            }
+            return result;
+        }
         public static void ClearLine(string testName)
         {
             Logger.Log($"\r{string.Empty.PadLeft(testName.Length + 40)}\r", true);
