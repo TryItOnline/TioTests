@@ -3,7 +3,7 @@
     public class Config
     {
         public string RunUrl { get; set; }
-        public string Test { get; set; }
+        public string TestPath { get; set; }
         public bool TrimWhitespacesFromResults { get; set; }
         public bool DisplayDebugInfoOnError { get; set; }
         public bool DisplayDebugInfoOnSuccess { get; set; }
@@ -17,6 +17,6 @@
         public bool BatchMode { get; set; }
         public bool BatchModeEffective => BatchMode && LocalRun;
         public bool Quiet { get; set; }
-        public bool DebugDump { get; set; }
+        public string DebugDumpFile { get; set; }
     }
 }

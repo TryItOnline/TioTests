@@ -11,90 +11,90 @@ namespace TioTests
             CommandLineApplication cla = new CommandLineApplication(false);
             CommandOption url = cla.Option(
                 "-u | --url",
-                "The url to send our test for execution. RunUrl in config.json",
+                "RunUrl. The url to send our test for execution. ",
                 CommandOptionType.SingleValue
             );
             CommandOption test = cla.Option(
                 "-n | --test",
-                "File or directory name with test(s). Files are expected to have *.json extension. Test in config.json",
+                "TestPath. File or directory name with test(s). Files are expected to have *.json extension.",
                 CommandOptionType.SingleValue
             );
 
             CommandOption trim = cla.Option(
                 "-t | --trim",
-                "Trim white spaces including new lines from results before comparing to expected output. Specify on or off. TrimWhitespacesFromResults in config.json",
+                "TrimWhitespacesFromResults. Trim white spaces including new lines from results before comparing to expected output. Specify on or off.",
                 CommandOptionType.SingleValue
             );
 
             CommandOption dumpOnError = cla.Option(
                 "-f | --dump-on-error",
-                "Display Debug info and Warnings that came from the server if expected output does not match the execution result. Specify on or off. DisplayDebugInfoOnError in config.json",
+                "DisplayDebugInfoOnError. Display Debug info and Warnings that came from the server if expected output does not match the execution result. Specify on or off.",
                 CommandOptionType.SingleValue
             );
 
             CommandOption dumpOnSuccess = cla.Option(
                 "-s | --dump-on-success",
-                "Display Debug info and Warnings that come from the server if expected output does match the execution result. Specify on or off. DisplayDebugInfoOnSuccess in config.json",
+                "DisplayDebugInfoOnSuccess. Display Debug info and Warnings that come from the server if expected output does match the execution result. Specify on or off.",
                 CommandOptionType.SingleValue
             );
 
             CommandOption useConsoleCodes = cla.Option(
                 "-d | --use-console-codes",
-                "If on will use ANSI escape codes. Set to off when redirecting the output to a file. Specify on or off. UseConsoleCodes in config.json",
+                "UseConsoleCodes. If on will use ANSI escape codes. Set to off when redirecting the output to a file. Specify on or off.",
                 CommandOptionType.SingleValue
             );
 
             CommandOption checkMissing = cla.Option(
                 "-c | --check-missing-tests",
-                "Provide url to tio language.json. Pass off to switch off. The command will print out any discrepancies between languages listed there and in the folder specified by -n | --test option",
+                "CheckUrl. Provide url to tio language.json. Pass off to switch off. The command will print out any discrepancies between languages listed there and in the folder specified by -n | --test option",
                 CommandOptionType.SingleValue
             );
 
             CommandOption retry = cla.Option(
                 "-r | --retries",
-                "Specify how many times to retry a test if connection failed",
+                "Retries. Specify how many times to retry a test if connection failed",
                 CommandOptionType.SingleValue
             );
 
             CommandOption localRun = cla.Option(
                 "-l | --local-run",
-                "Instead of running the command against http url supplied with -u run against local backend. Pass on to switch on. Pass path to local backend with -p. Pass ArenaHost with -z.",
+                "LocalRun. Instead of running the command against http url supplied with -u run against local backend. Pass on to switch on. Pass path to local backend with -p. Pass ArenaHost with -z.",
                 CommandOptionType.SingleValue
             );
 
             CommandOption localRoot = cla.Option(
                 "-o | --local-root",
-                "Specifies the main server directory (/srv). Used in local run mode, if either or both -p and -z are not provided. See their respective descriptions",
+                "LocalRoot. Specifies the main server directory (/srv). Used in local run mode, if either or both -p and -z are not provided. See their respective descriptions",
                 CommandOptionType.SingleValue
             );
 
             CommandOption localProcess = cla.Option(
                 "-p | --local-process",
-                "Used in local run mode. Specifies the process path to run tests against. If not specified, will combine path provided by -o and 'backend.tryitonline.net/run'",
+                "LocalProcess. Used in local run mode. Specifies the process path to run tests against. If not specified, will combine path provided by -o and 'backend.tryitonline.net/run'",
                 CommandOptionType.SingleValue
             );
 
             CommandOption arenaHost = cla.Option(
                 "-z | --arena-host",
-                "Used in local run mode. Specifies the arena user and host to run tests against. If not specified, will use path provided by -o to look up the value in 'etc/run'",
+                "ArenaHost. Used in local run mode. Specifies the arena user and host to run tests against. If not specified, will use path provided by -o to look up the value in 'etc/run'",
                 CommandOptionType.SingleValue
             );
 
             CommandOption batch = cla.Option(
                 "-b | --batch-mode",
-                "Used in local run mode. Batch up all the tests in a single call. There will be no progress indicator when tests are run in this mode. Pass off to switch off.",
+                "BatchMode .Used in local run mode. Batch up all the tests in a single call. There will be no progress indicator when tests are run in this mode. Pass off to switch off.",
                 CommandOptionType.SingleValue
             );
 
             CommandOption quiet = cla.Option(
                 "-q | --quiet",
-                "Used in batch mode. Suppresses results of individual tests, only displaying summary. -f or -s override this for failed and successful test respectively. Pass on to switch on.",
+                "Quiet. Used in batch mode. Suppresses results of individual tests, only displaying summary. -f or -s override this for failed and successful test respectively. Pass on to switch on.",
                 CommandOptionType.SingleValue
             );
 
             CommandOption dump = cla.Option(
                 "-x | --debug-dump",
-                "Append dumps of binary streams that are being sent and received to dump.log. Pass on to switch on.",
+                "DebugDumpFile. Append dumps of binary streams that are being sent and received to the file specified.",
                 CommandOptionType.SingleValue
             );
 
@@ -107,7 +107,7 @@ namespace TioTests
                 }
                 if (test.HasValue())
                 {
-                    config.Test = test.Value();
+                    config.TestPath = test.Value();
                 }
                 if (trim.HasValue())
                 {
@@ -165,7 +165,9 @@ namespace TioTests
                 }
                 if (dump.HasValue())
                 {
-                    SetBooleanOption(dump, cla, b => config.DebugDump = b);
+                    bool? val = null;
+                    SetBooleanOption(dump, cla, b => val = b);
+                    config.DebugDumpFile = val != null && !val.Value ? null : dump.Value();
                 }
                 return 1;
             });

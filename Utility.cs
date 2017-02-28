@@ -24,9 +24,9 @@ namespace TioTests
             return s?.Trim("\n\r\t ".ToCharArray());
         }
 
-        public static void Dump(string comment, byte[] data)
+        public static void Dump(string comment, byte[] data, string fileName)
         {
-            using (FileStream fs = File.Open("dump.log", FileMode.Append, FileAccess.Write, FileShare.Read))
+            using (FileStream fs = File.Open(fileName, FileMode.Append, FileAccess.Write, FileShare.Read))
             using (StreamWriter sw = new StreamWriter(fs))
             {
                 sw.WriteLine(comment);

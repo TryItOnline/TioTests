@@ -14,14 +14,14 @@ namespace TioTests
         public static void RunTestsBatchLocal(string[] files, Config config)
         {
             List<string> expectedOutput;
-            byte[] payload = PrepareBatch(files, config.DebugDump, out expectedOutput);
+            byte[] payload = PrepareBatch(files, config.DebugDumpFile, out expectedOutput);
 
             int numberOfTests = files.Length;
 
             Logger.LogLine($"Running a batch of {numberOfTests} tests");
             Stopwatch sw = new Stopwatch();
             sw.Start();
-            RunResult result = ExecuteLocal(payload, Utility.GetProcess(config), Utility.GetArenaHost(config), numberOfTests * 50, numberOfTests * 50 + 5, config.DebugDump);
+            RunResult result = ExecuteLocal(payload, Utility.GetProcess(config), Utility.GetArenaHost(config), numberOfTests * 50, numberOfTests * 50 + 5, config.DebugDumpFile);
             sw.Stop();
             string time = TimeFormatter.FormatTime(sw.Elapsed);
 
@@ -69,7 +69,7 @@ namespace TioTests
             }
         }
 
-        private static byte[] PrepareBatch(string[] files, bool dump, out List<string> expectedOutput)
+        private static byte[] PrepareBatch(string[] files, string dumpFileName, out List<string> expectedOutput)
         {
             // Parse files with test definitions, prepare request to run the test and collect 
             // expected test results
@@ -83,7 +83,7 @@ namespace TioTests
                     ms.Write(test.GetInputBytes());
                     expectedOutput.Add(test.Output);
                 }
-                payload = CompressAndDump(ms.ToArray(), dump, "Local");
+                payload = CompressAndDump(ms.ToArray(), dumpFileName, "Local");
             }
             return payload;
         }
@@ -102,13 +102,13 @@ namespace TioTests
             // This is the retry loop for flaky HTTP connection. Note that local runs are never over HTTP, so they are never retried 
             while (true)
             {
-                byte[] compressed = CompressAndDump(test.GetInputBytes(), config.DebugDump, config.LocalRun ? "Local" : "Remote");
+                byte[] compressed = CompressAndDump(test.GetInputBytes(), config.DebugDumpFile, config.LocalRun ? "Local" : "Remote");
 
                 Stopwatch sw = new Stopwatch();
                 sw.Start();
                 result = config.LocalRun
-                    ? ExecuteLocal(compressed, Utility.GetProcess(config), Utility.GetArenaHost(config), 60, 65, config.DebugDump)
-                    : ExecuteRemote(compressed, config.RunUrl, config.DebugDump);
+                    ? ExecuteLocal(compressed, Utility.GetProcess(config), Utility.GetArenaHost(config), 60, 65, config.DebugDumpFile)
+                    : ExecuteRemote(compressed, config.RunUrl, config.DebugDumpFile);
                 sw.Stop();
 
                 time = TimeFormatter.FormatTime(sw.Elapsed);
@@ -183,7 +183,7 @@ namespace TioTests
             }
         }
 
-        private static RunResult ExecuteLocal(byte[] test, string process, string arenaHost, int softTimeOut, int hardTimeOut, bool dump)
+        private static RunResult ExecuteLocal(byte[] test, string process, string arenaHost, int softTimeOut, int hardTimeOut, string dumpFileName)
         {
             ProcessStartInfo si = new ProcessStartInfo(process)
             {
@@ -214,7 +214,7 @@ namespace TioTests
                 result = ms.ToArray();
             }
 
-            if (dump) Utility.Dump("Local raw response", result);
+            if (dumpFileName != null) Utility.Dump("Local raw response", result, dumpFileName);
 
             byte[] endOfHeaders = { 0x0A, 0x0A };
             int offset = Utility.SearchBytes(result, endOfHeaders);
@@ -231,11 +231,11 @@ namespace TioTests
             byte[] raw = new byte[result.Length - offset];
             Array.Copy(result, offset, raw, 0, raw.Length);
             byte[] decoded = Compression.Decompress(raw);
-            if (dump) Utility.Dump("Local decoded response", decoded);
+            if (dumpFileName != null) Utility.Dump("Local decoded response", decoded, dumpFileName);
             return ResponseToRunResult(decoded);
         }
 
-        private static RunResult ExecuteRemote(byte[] test, string configRunUrl, bool dump)
+        private static RunResult ExecuteRemote(byte[] test, string configRunUrl, string dumpFileName)
         {
             HttpClient client = new HttpClient
             {
@@ -257,16 +257,16 @@ namespace TioTests
                     HttpFailure = true
                 };
             }
-            if (dump) Utility.Dump("Remote response", b);
+            if (dumpFileName != null) Utility.Dump("Remote response", b, dumpFileName);
 
             return ResponseToRunResult(b);
         }
 
-        private static byte[] CompressAndDump(byte[] data, bool dump, string marker)
+        private static byte[] CompressAndDump(byte[] data, string dumpFileName, string marker)
         {
-            if (dump) Utility.Dump($"{marker} request raw", data);
+            if (dumpFileName != null) Utility.Dump($"{marker} request raw", data, dumpFileName);
             byte[] payload = Compression.Compress(data);
-            if (dump) Utility.Dump($"{marker} request compressed", payload);
+            if (dumpFileName != null) Utility.Dump($"{marker} request compressed", payload, dumpFileName);
             return payload;
         }
 

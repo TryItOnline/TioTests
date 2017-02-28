@@ -31,7 +31,7 @@ namespace TioTests
                 {
                     RunUrl = "https://backend.tryitonline.net/run/api/no-cache/",
                     CheckUrl = "https://tryitonline.net/languages.json",
-                    Test = Path.Combine(Utility.GetAncestor(System.AppContext.BaseDirectory,3),"HelloWorldTests"),
+                    TestPath = Path.Combine(Utility.GetAncestor(AppContext.BaseDirectory,3),"HelloWorldTests"),
                     TrimWhitespacesFromResults = true,
                     DisplayDebugInfoOnError = true,
                     UseConsoleCodes = true,
@@ -44,13 +44,13 @@ namespace TioTests
                 return;
             }
 
-            if (Directory.Exists(config.Test))
+            if (Directory.Exists(config.TestPath))
             {
                 if (!string.IsNullOrWhiteSpace(config.CheckUrl))
                 {
-                    MissingTestsChecker.Check(config.CheckUrl,config.Test, config.UseConsoleCodes);
+                    MissingTestsChecker.Check(config.CheckUrl,config.TestPath, config.UseConsoleCodes);
                 }
-                string[] files = Directory.GetFiles(config.Test, "*.json");
+                string[] files = Directory.GetFiles(config.TestPath, "*.json");
                 Array.Sort(files);
                 int counter = 0;
                 int success = 0;
@@ -75,17 +75,17 @@ namespace TioTests
                     TestRunner.RunTestsBatchLocal(files,config);
                 }
             }
-            else if (File.Exists(config.Test))
+            else if (File.Exists(config.TestPath))
             {
-                TestRunner.RunSingleTest(config.Test, config,"[1/1]");
+                TestRunner.RunSingleTest(config.TestPath, config,"[1/1]");
             }
-            else if (File.Exists(config.Test + ".json"))
+            else if (File.Exists(config.TestPath + ".json"))
             {
-                TestRunner.RunSingleTest(config.Test + ".json", config,"1/1");
+                TestRunner.RunSingleTest(config.TestPath + ".json", config,"1/1");
             }
             else
             {
-                Logger.LogLine($"Tests '{config.Test}' not found");
+                Logger.LogLine($"Tests '{config.TestPath}' not found");
             }
         }
     }

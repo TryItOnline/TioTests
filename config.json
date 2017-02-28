@@ -13,5 +13,5 @@
   "ArenaHost": null,
   "BatchMode": true,
   "Quiet": false,
-  "DebugDump": false      
+  "DebugDump": null      
 }
