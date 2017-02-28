@@ -1,6 +1,6 @@
 ﻿{
   "RunUrl": "https://backend.tryitonline.net/run/api/no-cache/",
-  "Test": "HelloWorldTests",
+  "TestPath": "HelloWorldTests",
   "TrimWhitespacesFromResults": true,
   "DisplayDebugInfoOnError": true,
   "DisplayDebugInfoOnSuccess": false,

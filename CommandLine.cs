@@ -128,7 +128,7 @@ namespace TioTests
                 if (checkMissing.HasValue())
                 {
                     bool? val = null;
-                    SetBooleanOption(checkMissing, cla, b => val = b);
+                    SetBooleanOption(checkMissing, cla, b => val = b, false);
                     config.CheckUrl = val != null && !val.Value ? null : checkMissing.Value();
                 }
                 if (retry.HasValue())
@@ -166,7 +166,7 @@ namespace TioTests
                 if (dump.HasValue())
                 {
                     bool? val = null;
-                    SetBooleanOption(dump, cla, b => val = b);
+                    SetBooleanOption(dump, cla, b => val = b, false);
                     config.DebugDumpFile = val != null && !val.Value ? null : dump.Value();
                 }
                 return 1;
