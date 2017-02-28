@@ -5,13 +5,13 @@ Runs everywhere, where .NET Core runs. Tested on Windows 10, Fedora 24, Fedora 2
 
 ## Installation
 
-    1. Install [.NET Core](https://www.microsoft.com/net/core) you need version 1.1
-    2. `git clone https://github.com/AndrewSav/TioTests.git`
-    3. `cd TioTests`
-    4. `dotnet restore`
-    5. Edit `config.json` if required
-    6. `dotnet build`
-    7. `dotnet run`
+1. Install [.NET Core](https://www.microsoft.com/net/core) you need version 1.1
+1. `git clone https://github.com/AndrewSav/TioTests.git`
+1. `cd TioTests`
+1. `dotnet restore`
+1. Edit `config.json` if required
+1. `dotnet build`
+1. `dotnet run`
 
 ## Ways to specify parameters
 
