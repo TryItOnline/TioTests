@@ -1,0 +1,10 @@
+{
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["alphuck"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "iiciccepepceaiiiaiaiaicccsascciijceeeeeejccijjccjcejaajaajcccjeeejaajaaijcccej" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
+  "Output": "Hello, World!"
+}
