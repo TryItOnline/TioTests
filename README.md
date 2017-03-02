@@ -199,7 +199,6 @@ On your main TryItOnline serever execute:
 
 ```bash
 dnf install lldb-devel lttng-ust -y
-rm -rf usr
 rm -rf /opt/microsoft
 rm -f /usr/local/bin/dotnet
 mkdir -p /opt/microsoft/dotnet
