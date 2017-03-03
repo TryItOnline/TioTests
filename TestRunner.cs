@@ -163,7 +163,7 @@ namespace TioTests
         {
             if (config.UseConsoleCodes) Console.ForegroundColor = p.Color;
             if (!config.BatchModeEffective) Logger.LogLine(config.UseConsoleCodes ? $"{p.TestName} - {p.Result} ({p.Time})" : $"{p.Counter} {p.TestName} - {p.Result} ({p.Time})");
-            if (config.BatchModeEffective && (!config.Quiet || config.DisplayDebugInfoOnError)) Logger.LogLine($"{p.TestName} - {p.Result}");
+            if (config.BatchModeEffective && (!config.Quiet || (p.Success ? config.DisplayDebugInfoOnSuccess : config.DisplayDebugInfoOnError))) Logger.LogLine($"{p.TestName} - {p.Result}");
             if (config.UseConsoleCodes) Console.ResetColor();
             if (p.Success ? config.DisplayDebugInfoOnSuccess : config.DisplayDebugInfoOnError)
             {
