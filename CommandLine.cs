@@ -153,7 +153,7 @@ namespace TioTests
                 }
                 if (arenaHost.HasValue())
                 {
-                    config.ArenaHost = url.Value();
+                    config.ArenaHost = arenaHost.Value();
                 }
                 if (batch.HasValue())
                 {
