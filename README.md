@@ -212,12 +212,12 @@ Now assuming, that your TioTests folder is at `/opt/TioTests`, run:
 
 ```bash
 cd /opt/TioTests
-mkdir -p /root/waldo
-TMPDIR=/root/waldo HOME=/root dotnet restore
+mkdir -p /root/tmp
+TMPDIR=/root/tmp HOME=/root dotnet restore
 HOME=/root dotnet build
-rm -rf /root/waldo
+rm -rf /root/tmp
 ```
 
+If you do not have your `$TMPDIR` mounter over small tmpfs, you do not need the `/root/tmp` bit. On out of the box setup vy vultr though, not doing that produces and out of space error.
+
 That should be enough to get TioTests up and running.
-
-
