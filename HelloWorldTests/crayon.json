@@ -1,0 +1,10 @@
+{
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["crayon"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"q" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
+  "Output": "Hello, World!"
+}
