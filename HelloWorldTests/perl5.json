@@ -1,6 +1,6 @@
 {
   "Input":  [
-      { "Command" : "V" , "Payload" : { "lang" : ["perl"] } },
+      { "Command" : "V" , "Payload" : { "lang" : ["perl5"] } },
       { "Command" : "F" , "Payload" : { ".code.tio": "print \"Hello, World!\";" } },
       { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
       { "Command" : "V" , "Payload" : { "args": [] } },
