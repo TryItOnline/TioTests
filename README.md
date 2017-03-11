@@ -5,7 +5,7 @@ Runs everywhere, where .NET Core runs. Tested on Windows 10, Fedora 24, Fedora 2
 
 ## Installation
 
-1. Install [.NET Core](https://www.microsoft.com/net/core) you need version 1.1
+1. Install [.NET Core](https://www.microsoft.com/net/core) you need version 1.1.1
 1. `git clone https://github.com/AndrewSav/TioTests.git`
 1. `cd TioTests`
 1. `dotnet restore`
@@ -195,7 +195,7 @@ The layout of this file is intended to match TryItOnline request protocol soon t
 As of the moment of writing the official downloads are provided by Microsoft only for Fedora 23 and 24.
 Here is how one can get .net Core up and running on Fedora 25.
 
-On your main TryItOnline serever execute:
+On your main TryItOnline server execute:
 
 ```bash
 dnf install lldb-devel lttng-ust -y
@@ -204,7 +204,7 @@ rm -f /usr/local/bin/dotnet
 mkdir -p /opt/microsoft/dotnet
 rpm2cpio https://dl.fedoraproject.org/pub/fedora/linux/releases/24/Server/x86_64/os/Packages/l/libicu-56.1-4.fc24.x86_64.rpm | cpio -dim -D /
 rpm2cpio https://dl.fedoraproject.org/pub/fedora/linux/releases/25/Everything/x86_64/os/Packages/l/lldb-3.8.0-2.fc25.x86_64.rpm | cpio -dim -D /
-curl -sSL https://go.microsoft.com/fwlink/?LinkID=835025 | tar xz -C /opt/microsoft/dotnet
+curl -sSL https://go.microsoft.com/fwlink/?LinkID=843461 | tar xz -C /opt/microsoft/dotnet
 ln -s /opt/microsoft/dotnet/dotnet /usr/local/bin
 ```
 
