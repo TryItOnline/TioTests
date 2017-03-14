@@ -1,10 +1,10 @@
 {
   "Input":  [
       { "Command" : "V" , "Payload" : { "lang" : ["glypho"] } },
-      { "Command" : "F" , "Payload" : { ".code.tio": "aabcabababbaabababbcabababababbcabbcabbb" } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "aabcabababbaababaabcabbaabababbcabbaabababababababbaabbaabababababababbaabbaaabcabbaababaabcaabcabbaabababbcabababbaabbaababaabcaabcabbaaabcabbaabababbaabbaababaabcabcaabababababbaabbaabbaababaabcabaaababaabaabbaabcaabababbaabbaaabcaabcabbaabababbcabababbcabababbaabaaababaabaabababbaabababbaabababaaababaabaabbaabababbaaabcabbaababaabcabcaabababababbaabbaabbaababaabcabcaabaaababaabaabbaabababbcaabcabbaaabcaabcabbaaabcabbaabababbaabababbcabababbaabaaabababcaabbaaabaabacabbbabcb" } },
       { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
       { "Command" : "V" , "Payload" : { "args": [] } },
       { "Command" : "R" }
   ],
-  "Output": "@"
+  "Output": "Hello, World!"
 }
