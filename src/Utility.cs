@@ -58,7 +58,7 @@ namespace TioTests
             {
                 return config.LocalProcess;
             }
-            return Path.Combine(config.LocalRoot, "backend.tryitonline.net/run");
+            return Path.Combine(config.LocalRoot, "tio.run/cgi-bin/run");
         }
 
         public static string GetArenaHost(Config config)

@@ -1,5 +1,5 @@
 ﻿{
-  "RunUrl": "https://backend.tryitonline.net/run/api/no-cache/",
+  "RunUrl": "https://tio.run/cgi-bin/run/api/no-cache/",
   "TestPath": "HelloWorldTests",
   "TrimWhitespacesFromResults": true,
   "DisplayDebugInfoOnError": true,

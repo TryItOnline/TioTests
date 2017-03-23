@@ -70,7 +70,7 @@ namespace TioTests
 
             CommandOption localProcess = cla.Option(
                 "-p | --local-process",
-                "LocalProcess. Used in local run mode. Specifies the process path to run tests against. If not specified, will combine path provided by -o and 'backend.tryitonline.net/run'",
+                "LocalProcess. Used in local run mode. Specifies the process path to run tests against. If not specified, will combine path provided by -o and 'tio.run/cgi-bin/run'",
                 CommandOptionType.SingleValue
             );
 

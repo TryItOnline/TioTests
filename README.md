@@ -54,7 +54,7 @@ The following sub-headers are the representation of the command line options in 
 
 **Command line switch**: -u, --url
 
-**Default**: `https://backend.tryitonline.net/run/api/no-cache/`
+**Default**: `https://tio.run/cgi-bin/run/api/no-cache/`
 
 **Description**: Specifies TryItOnline backend url. The `api` part of the url makes sure that returned http response contains `Content-Encoding: gzip` header, this way the response automatically unzipped on the client. TioTests relies on presence of this header for unzipping the response. The `no-cache` part of the url makes sure that the test is actually run even if a previous test result is already cached. This parameter is not used in the local run mode.
 
@@ -128,7 +128,7 @@ The following sub-headers are the representation of the command line options in 
 
 **Default**: `/srv`
 
-**Description**: Specifies where your main server installation is. By default, the arena address is taken from `etc/run` relative to this path and the script to execute is `backend.tryitonline.net/run` also relative to this path. These defaults can be overwritten by `-p` and `-z` respectively. See below. This option is only used in local run mode.
+**Description**: Specifies where your main server installation is. By default, the arena address is taken from `etc/run` relative to this path and the script to execute is `tio.run/cgi-bin/run` also relative to this path. These defaults can be overwritten by `-p` and `-z` respectively. See below. This option is only used in local run mode.
 
 ### LocalProcess
 
@@ -136,7 +136,7 @@ The following sub-headers are the representation of the command line options in 
 
 **Default**: `null`
 
-**Description**: Allows to override the process to run in local run mode. E.g. `-p /srv/backened/tryitonline.net/run-dev`. If not specified, default value is used, see `-o` above. This option is only used in local run mode.
+**Description**: Allows to override the process to run in local run mode. E.g. `-p /srv/tio.run/cgi-bin/run-dev`. If not specified, default value is used, see `-o` above. This option is only used in local run mode.
 
 ### ArenaHost
 

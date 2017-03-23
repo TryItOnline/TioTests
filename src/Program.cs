@@ -29,7 +29,7 @@ namespace TioTests
                 JsonConvert.DeserializeObject<Config>(File.ReadAllText(configPath)) :
                 new Config
                 {
-                    RunUrl = "https://backend.tryitonline.net/run/api/no-cache/",
+                    RunUrl = "https://tio.run/cgi-bin/run/api/no-cache/",
                     CheckUrl = "https://tryitonline.net/languages.json",
                     TestPath = Path.Combine(Utility.GetAncestor(AppContext.BaseDirectory,3),"HelloWorldTests"),
                     TrimWhitespacesFromResults = true,
