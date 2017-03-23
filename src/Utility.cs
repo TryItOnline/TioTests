@@ -67,7 +67,7 @@ namespace TioTests
             {
                 return config.ArenaHost;
             }
-            return Directory.GetFiles(Path.Combine(config.LocalRoot, "etc/run.d")).OrderBy(x=>x).FirstOrDefault();
+            return Path.GetFileName(Directory.GetFiles(Path.Combine(config.LocalRoot, "etc/run.d")).OrderBy(x=>x).FirstOrDefault());
         }
     }
 }
