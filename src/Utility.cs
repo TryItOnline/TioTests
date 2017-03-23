@@ -67,10 +67,7 @@ namespace TioTests
             {
                 return config.ArenaHost;
             }
-            Path.Combine(config.LocalRoot, "etc/run");
-            string[] runConfig = File.ReadAllLines(Path.Combine(config.LocalRoot, "etc/run"));
-            const string target = "ssh_user_host=";
-            return runConfig.Select(x => x.Trim()).LastOrDefault(x => x.StartsWith(target)).Substring(target.Length);
+            return Directory.GetFiles(Path.Combine(config.LocalRoot, "etc/run.d")).OrderBy(x=>x).FirstOrDefault();
         }
     }
 }
