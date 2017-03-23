@@ -1,0 +1,10 @@
+{
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["wise"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "~-<<<~-<<<::^~-<~-<<<~-<<~-:::^~-<<<~-^::?:>~-<~-:?::^~-<<~-<~-<<::^~-<<<<<:<::^<~-<<~-<~-<~-|!::^~-<~-<~-<<<~-<!:::^~-<<<^::^~-<<<<<~-" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": ["-a"] } },
+      { "Command" : "R" }
+  ],
+  "Output": "Hello, World!"
+}
