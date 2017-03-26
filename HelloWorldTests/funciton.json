@@ -1,0 +1,10 @@
+{
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["funciton"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "╔═══════════════╗\n║ 2388215291394 ║\n║ 5970717094395 ║\n║ 9830070909071 ║\n║ 3359207734160 ║\n║ 6896177782105 ║\n║ 7169552834632 ║\n╚═══════╤═══════╝\n        │" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
+  "Output": "Hello, World!"
+}
