@@ -31,7 +31,7 @@ namespace TioTests
                 {
                     RunUrl = "https://tio.run/cgi-bin/run/api/no-cache/",
                     CheckUrl = "https://tryitonline.net/languages.json",
-                    TestPath = Path.Combine(Utility.GetAncestor(AppContext.BaseDirectory,3),"HelloWorldTests"),
+                    TestPath = Path.Combine(Utility.GetAncestor(AppContext.BaseDirectory,3)??"","HelloWorldTests"),
                     TrimWhitespacesFromResults = true,
                     DisplayDebugInfoOnError = true,
                     UseConsoleCodes = true,
