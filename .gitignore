@@ -35,3 +35,4 @@ msbuild.wrn
 /TioTests.xproj
 /TioTests.sln
 /Properties/launchSettings.json
+/Properties/PublishProfiles/
