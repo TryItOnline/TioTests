@@ -1,0 +1,10 @@
+{
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["dstack"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "@0\nHello, World!\n@\nad" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
+  "Output": "Hello, World!"
+}
