@@ -1,0 +1,10 @@
+{
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["roop"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "\"Hello, World!\"\nh" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
+  "Output": "Hello, World!"
+}
