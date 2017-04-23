@@ -1,0 +1,10 @@
+{
+  "Input":  [
+      { "Command" : "V" , "Payload" : { "lang" : ["tcl"] } },
+      { "Command" : "F" , "Payload" : { ".code.tio": "puts Hello,\\ World!" } },
+      { "Command" : "F" , "Payload" : { ".input.tio" : "" } },
+      { "Command" : "V" , "Payload" : { "args": [] } },
+      { "Command" : "R" }
+  ],
+  "Output": "Hello, World!"
+}
