@@ -1,5 +1,7 @@
 # TioTests
 
+**Note that after certain protocol changes this tool no longer works. We use tiodryrun that comes in the main tryitonline repository instead. This notice will be put down if/when this repo is brought up to date**
+
 A tool that is capable of running test suits on [TryItOnline!](https://tryitonline.net). A test suite with "Hello, World!" test for every supported language is also provided. 
 Runs everywhere, where .NET Core runs. Tested on Windows 10, Fedora 24, Fedora 25.
 
